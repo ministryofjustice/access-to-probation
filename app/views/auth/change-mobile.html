@@ -1,0 +1,41 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  HMPPS Digital Services - Change Mobile Number
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        What is your new mobile number?
+      </h1>
+
+      {{ govukInput({
+        label: {
+          text: "We might use your mobile number to confirm your identity when you sign in.",
+          classes: 'govuk-label'
+        },
+          hint: {
+            text: "This must be a UK mobile number, for example 07700 900321 or +44 7700 900321"
+        },
+        classes: "govuk-!-width-two-thirds",
+        id: "new-backup-email",
+        name: "new-backup-email",
+        value: "07770123456"
+      }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "verify-mobile-already"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  HMPPS Digital Services - Change Email Request
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukInput({
+        label: {
+          text: "What is your new email address?",
+          classes: 'govuk-label--l',
+          isPageHeading: true
+        },
+        id: "new-email",
+        name: "new-email",
+        type: "text",
+        value: "john.doe@digital.justice.gov.uk"
+      }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "verify-email-already"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

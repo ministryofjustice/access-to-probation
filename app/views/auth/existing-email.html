@@ -1,0 +1,42 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  HMPPS Digital Services - Change Email Request
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukInput({
+        label: {
+          text: "What is your current password?",
+          classes: 'govuk-label--xl',
+          isPageHeading: true
+        },
+        id: "password",
+        classes: "moj-password-reveal__input",
+        name: "password",
+        type: "password"
+      }) }}
+
+      <p class="govuk-body">
+        <a href="reset-password" class="govuk-link govuk-link--no-visited-state">I do not know my password</a>
+      </p>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "new-email"
+      }) }}
+
+<p><strong>THERE'S A HORRIBLE SPACING ISSUE HERE THAT NEEDS TO BE SORTED</strong></p>
+
+
+    </div>
+  </div>
+
+{% endblock %}

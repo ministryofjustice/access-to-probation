@@ -1,0 +1,587 @@
+
+{% extends "layout-manage-user-accounts.html" %}
+
+{% block pageTitle %}
+  Create external users - Key worker - Digital Prison Services
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../home-digital-prison-services"
+    },
+    {
+      text: "Manage user accounts",
+      href: "/manage-user-accounts/index"
+    },
+    {
+      text: "Create external users"
+    }
+  ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Create auth users
+      </h1>
+      <p>
+
+      <form action="create-auth-user" method="post">
+
+        {{ govukInput({
+          label: {
+            text: "Username",
+            classes: "govuk-label"
+          },
+          classes: "govuk-!-width-full",
+          id: "username",
+          name: "username"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Email address",
+            classes: "govuk-label"
+          },
+          classes: "govuk-!-width-full",
+          id: "email-address",
+          name: "email-address"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "First name",
+            classes: "govuk-label"
+          },
+          classes: "govuk-!-width-full",
+          id: "first-name",
+          name: "first-name"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Last name",
+            classes: "govuk-label"
+          },
+          classes: "govuk-!-width-full",
+          id: "last-name",
+          name: "last-name"
+        }) }}
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort">
+            Select group
+          </label>
+          <select class="govuk-select" id="group" name="group">
+            <option value="">-- Select --</option>
+            <option value="CRC_C03">CPA Durham Tees Valley</option>
+            <option value="CRC_C04">CPA Humber Lincs &amp; N Yorks</option>
+            <option value="CRC_C01">CPA Northumbria</option>
+            <option value="CRC_C09">CPA South Yorkshire</option>
+            <option value="GEOAMEY">GEOamey PECS supplier</option>
+            <option value="PF_EAST_MIDLANDS">Pathfinder Police - East Midlands</option>
+            <option value="PF_EASTERN">Pathfinder Police - Eastern</option>
+            <option value="PF_LONDON">Pathfinder Police - London</option>
+            <option value="PF_NATIONAL">Pathfinder Police - National</option>
+            <option value="PF_NORTH_EAST">Pathfinder Police - North East</option>
+            <option value="PF_NORTH_WEST">Pathfinder Police - North West</option>
+            <option value="PF_SOUTH_EAST">Pathfinder Police - South East</option>
+            <option value="PF_SOUTH_WEST">Pathfinder Police - South West</option>
+            <option value="PF_WALES">Pathfinder Police - Wales</option>
+            <option value="PF_WEST_MIDLANDS">Pathfinder Police - West Midlands</option>
+            <option value="PECS_ABDRCT">PECS Court Aberdare County Court</option>
+            <option value="PECS_ABRYCT">PECS Court Aberystwyth County Court</option>
+            <option value="PECS_ABRYMC">PECS Court Aberystwyth Magistrates Court</option>
+            <option value="PECS_ALDRCT">PECS Court Aldershot County Court</option>
+            <option value="PECS_ALDRMC">PECS Court Aldershot Magistrates Court</option>
+            <option value="PECS_AMERCC">PECS Court Amersham Crown Court</option>
+            <option value="PECS_ASHFCT">PECS Court Ashford County Court</option>
+            <option value="PECS_ASHTMC">PECS Court Ashton-under-Lyne Magistrates Court</option>
+            <option value="PECS_AYLSCT">PECS Court Aylesbury County Court</option>
+            <option value="PECS_AYLSCC">PECS Court Aylesbury Crown Court</option>
+            <option value="PECS_AYLSMC">PECS Court Aylesbury Magistrates Court</option>
+            <option value="PECS_BANBCT">PECS Court Banbury County Court</option>
+            <option value="PECS_THA053">PECS Court Banbury Magistrates Court</option>
+            <option value="PECS_LDM083">PECS Court Barkingside Magistrates Court</option>
+            <option value="PECS_BRNTCT">PECS Court Barnet County Court</option>
+            <option value="PECS_BRNSCT">PECS Court Barnsley County Court</option>
+            <option value="PECS_BRNSMC">PECS Court Barnsley Magistrates Court</option>
+            <option value="PECS_BNSTCT">PECS Court Barnstaple County Court</option>
+            <option value="PECS_BNSTMC">PECS Court Barnstaple Magistrates Court</option>
+            <option value="PECS_BRRWCT">PECS Court Barrow-in-Furness County Court</option>
+            <option value="PECS_BARRMC">PECS Court Barrow-in-Furness Magistrates Court</option>
+            <option value="PECS_BSLDCT">PECS Court Basildon County Court</option>
+            <option value="PECS_BSLDCC">PECS Court Basildon Crown Court</option>
+            <option value="PECS_BSLDMC">PECS Court Basildon Magistrates Court</option>
+            <option value="PECS_BSNGCT">PECS Court Basingstoke County Court</option>
+            <option value="PECS_BSNGMC">PECS Court Basingstoke Magistrates Court</option>
+            <option value="PECS_BATHCT">PECS Court Bath County Court</option>
+            <option value="PECS_BATHMC">PECS Court Bath Magistrates Court</option>
+            <option value="PECS_BDFRMC">PECS Court Bedford &amp; Mid Bedfordshire Magistrates Court</option>
+            <option value="PECS_BDFRCT">PECS Court Bedford County Court</option>
+            <option value="PECS_BDLNMC">PECS Court Bedlington Magistrates Court</option>
+            <option value="PECS_BRWKMC">PECS Court Berwick-upon-Tweed Magistrates Court</option>
+            <option value="PECS_BEVRMC">PECS Court Beverley Magistrates Court</option>
+            <option value="PECS_BEXLMC">PECS Court Bexleyheath Magistrates Court</option>
+            <option value="PECS_BRKNCT">PECS Court Birkenhead County Court</option>
+            <option value="PECS_BRKNMC">PECS Court Birkenhead Magistrates Court</option>
+            <option value="PECS_BRMNCT">PECS Court Birmingham Civil Justice Centre and Family Court</option>
+            <option value="PECS_BRMNCC">PECS Court Birmingham Crown Court</option>
+            <option value="PECS_BCCACC">PECS Court Birmingham Crown Court (Annex)</option>
+            <option value="PECS_BRMCMC">PECS Court Birmingham Magistrates Court Corporation St</option>
+            <option value="PECS_BISHCT">PECS Court Bishop Auckland County Court</option>
+            <option value="PECS_BLKBCT">PECS Court Blackburn County Court</option>
+            <option value="PECS_BLKBMC">PECS Court Blackburn Magistrates Court</option>
+            <option value="PECS_BLKPCT">PECS Court Blackpool County Court</option>
+            <option value="PECS_BLKPMC">PECS Court Blackpool Magistrates Court</option>
+            <option value="PECS_BLKWCT">PECS Court Blackwood County Court</option>
+            <option value="PECS_BODMCT">PECS Court Bodmin County Court</option>
+            <option value="PECS_BODMMC">PECS Court Bodmin Magistrates Court</option>
+            <option value="PECS_BOLTCT">PECS Court Bolton County Court</option>
+            <option value="PECS_BOSTCT">PECS Court Boston County Court</option>
+            <option value="PECS_BOSTMC">PECS Court Boston Magistrates Court</option>
+            <option value="PECS_BRNMCT">PECS Court Bournemouth County Court</option>
+            <option value="PECS_BRNMCC">PECS Court Bournemouth Crown Court</option>
+            <option value="PECS_BRADCT">PECS Court Bradford County Court</option>
+            <option value="PECS_BRADCC">PECS Court Bradford Crown Court</option>
+            <option value="PECS_BRADMC">PECS Court Bradford Magistrates Court</option>
+            <option value="PECS_BRCKCT">PECS Court Brecknock County Court</option>
+            <option value="PECS_BRTFCT">PECS Court Brentford County Court</option>
+            <option value="PECS_BRDLMC">PECS Court Bridlington Magistrates Court</option>
+            <option value="PECS_BRGHCT">PECS Court Brighton County Court</option>
+            <option value="PECS_BRGEMC">PECS Court Brighton Magistrates Court (Edward St)</option>
+            <option value="PECS_BRSTCT">PECS Court Bristol County Court</option>
+            <option value="PECS_BRSTCC">PECS Court Bristol Crown Court</option>
+            <option value="PECS_BRSTMC">PECS Court Bristol Magistrates Court</option>
+            <option value="PECS_BRMLCT">PECS Court Bromley County Court</option>
+            <option value="PECS_BROMMC">PECS Court Bromley Magistrates Court</option>
+            <option value="PECS_BURNCT">PECS Court Burnley County Court</option>
+            <option value="PECS_BURNCC">PECS Court Burnley Crown Court</option>
+            <option value="PECS_BURNMC">PECS Court Burnley Magistrates Court</option>
+            <option value="PECS_BRTNCT">PECS Court Burton-upon-Trent County Court</option>
+            <option value="PECS_BURYCT">PECS Court Bury County Court</option>
+            <option value="PECS_BRSECT">PECS Court Bury St. Edmunds County Court</option>
+            <option value="PECS_CRNRCT">PECS Court Caernarfon County Court</option>
+            <option value="PECS_CRNRCC">PECS Court Caernarfon Crown Court</option>
+            <option value="PECS_CRNHMC">PECS Court Caernarfon Magistrates Court</option>
+            <option value="PECS_CANNMC">PECS Court Cannock Magistrates Court</option>
+            <option value="PECS_CANTCT">PECS Court Canterbury County Court</option>
+            <option value="PECS_CANTCC">PECS Court Canterbury Crown Court</option>
+            <option value="PECS_CANTMC">PECS Court Canterbury Magistrates Court</option>
+            <option value="PECS_CRDFCT">PECS Court Cardiff County Court</option>
+            <option value="PECS_CRDFCC">PECS Court Cardiff Crown Court</option>
+            <option value="PECS_CRDFMC">PECS Court Cardiff Magistrates Court</option>
+            <option value="PECS_CARLCT">PECS Court Carlisle County Court</option>
+            <option value="PECS_CARLCC">PECS Court Carlisle Crown Court</option>
+            <option value="PECS_CARLMC">PECS Court Carlisle Magistrates Court</option>
+            <option value="PECS_CARMCT">PECS Court Carmarthen County Court</option>
+            <option value="PECS_CNTRCC">PECS Court Central Criminal Court</option>
+            <option value="PECS_PRINCT">PECS Court Central Family Court</option>
+            <option value="PECS_LONDCT">PECS Court Central London County Court (Now Sits at RCJ)</option>
+            <option value="PECS_CHLMCT">PECS Court Chelmsford County Court</option>
+            <option value="PECS_CHLMCC">PECS Court Chelmsford Crown Court</option>
+            <option value="PECS_CHLMMC">PECS Court Chelmsford Magistrates Court</option>
+            <option value="PECS_CHSTCT">PECS Court Chesterfield County Court</option>
+            <option value="PECS_CHSTMC">PECS Court Chesterfield Magistrates Court</option>
+            <option value="PECS_CHCHCT">PECS Court Chichester County Court</option>
+            <option value="PECS_CHRLCT">PECS Court Chorley County Court</option>
+            <option value="PECS_CITYMC">PECS Court City of London Magistrates Court</option>
+            <option value="PECS_CLRKCT">PECS Court Clerkenwell &amp; Shoreditch County Court</option>
+            <option value="PECS_CLCHCT">PECS Court Colchester County Court</option>
+            <option value="PECS_COLHMC">PECS Court Colchester Magistrates Court</option>
+            <option value="PECS_CNSTCT">PECS Court Consett County Court</option>
+            <option value="PECS_CNWYCT">PECS Court Conwy and Colwyn County Court</option>
+            <option value="PECS_COACD">PECS Court Court of Appeal Criminal Division</option>
+            <option value="PECS_CVNTCT">PECS Court Coventry County Court</option>
+            <option value="PECS_CVNTCC">PECS Court Coventry Crown Court</option>
+            <option value="PECS_CVNTMC">PECS Court Coventry Magistrates Court</option>
+            <option value="PECS_CRAWMC">PECS Court Crawley Magistrates Court</option>
+            <option value="PECS_CREWCT">PECS Court Crewe County Court</option>
+            <option value="PECS_CREWMC">PECS Court Crewe Magistrates Court</option>
+            <option value="PECS_CRYDCT">PECS Court Croydon County Court</option>
+            <option value="PECS_CRYDCC">PECS Court Croydon Crown Court</option>
+            <option value="PECS_CRYDMC">PECS Court Croydon Magistrates Court</option>
+            <option value="PECS_CWMBMC">PECS Court Cwmbran Magistrates Court</option>
+            <option value="PECS_DARLCT">PECS Court Darlington County Court</option>
+            <option value="PECS_DRTFCT">PECS Court Dartford County Court</option>
+            <option value="PECS_DEWSCT">PECS Court Dewsbury County Court</option>
+            <option value="PECS_DONCCT">PECS Court Doncaster County Court</option>
+            <option value="PECS_DONCCC">PECS Court Doncaster Crown Court</option>
+            <option value="PECS_DONCMC">PECS Court Doncaster Magistrates Court</option>
+            <option value="PECS_DORKMC">PECS Court Dorking Magistrates Court</option>
+            <option value="PECS_DUDLCT">PECS Court Dudley County Court</option>
+            <option value="PECS_DUDLMC">PECS Court Dudley Magistrates Court</option>
+            <option value="PECS_DURHCT">PECS Court Durham County Court</option>
+            <option value="PECS_DURHCC">PECS Court Durham Crown Court</option>
+            <option value="PECS_EALNMC">PECS Court Ealing Magistrates Court</option>
+            <option value="PECS_EASBCT">PECS Court Eastbourne County Court</option>
+            <option value="PECS_EDMNCT">PECS Court Edmonton County Court</option>
+            <option value="PECS_EPSMCT">PECS Court Epsom County Court</option>
+            <option value="PECS_EVSHCT">PECS Court Evesham County Court</option>
+            <option value="PECS_EXETCT">PECS Court Exeter County Court</option>
+            <option value="PECS_FLKSMC">PECS Court Folkestone Magistrates Court</option>
+            <option value="PECS_GTSHCT">PECS Court Gateshead County Court</option>
+            <option value="PECS_GLOCCT">PECS Court Gloucester County Court</option>
+            <option value="PECS_GLOCCC">PECS Court Gloucester Crown Court</option>
+            <option value="PECS_GRNTCT">PECS Court Grantham County Court</option>
+            <option value="PECS_GRVSCT">PECS Court Gravesend County Court</option>
+            <option value="PECS_GRIMCT">PECS Court Great Grimsby County Court</option>
+            <option value="PECS_GRIMCC">PECS Court Great Grimsby Crown Court</option>
+            <option value="PECS_GRTYMC">PECS Court Great Yarmouth Magistrates Court</option>
+            <option value="PECS_GRIMMC">PECS Court Grimsby Magistrates Court</option>
+            <option value="PECS_GLDFCT">PECS Court Guildford County Court</option>
+            <option value="PECS_GLDFCC">PECS Court Guildford Crown Court</option>
+            <option value="PECS_GLDFMC">PECS Court Guildford Magistrates Court</option>
+            <option value="PECS_HLFXCT">PECS Court Halifax County Court</option>
+            <option value="PECS_HRLWCT">PECS Court Harlow County Court</option>
+            <option value="PECS_HRRGCT">PECS Court Harrogate County Court</option>
+            <option value="PECS_HRRGMC">PECS Court Harrogate Magistrates Court</option>
+            <option value="PECS_HRRWCC">PECS Court Harrow Crown Court</option>
+            <option value="PECS_HSTNCT">PECS Court Hastings County Court</option>
+            <option value="PECS_HSTNMC">PECS Court Hastings Magistrates Court</option>
+            <option value="PECS_HATFMC">PECS Court Hatfield Remand Court</option>
+            <option value="PECS_HVRFCT">PECS Court Haverfordwest County Court</option>
+            <option value="PECS_HYWHCT">PECS Court Haywards Heath County Court</option>
+            <option value="PECS_HNDNMC">PECS Court Hendon Magistrates Court</option>
+            <option value="PECS_HRFRCT">PECS Court Hereford County Court</option>
+            <option value="PECS_HERFCC">PECS Court Hereford Crown Court</option>
+            <option value="PECS_HERFMC">PECS Court Hereford Magistrates Court</option>
+            <option value="PECS_HERTCT">PECS Court Hertford County Court</option>
+            <option value="PECS_HWYCCT">PECS Court High Wycombe County Court</option>
+            <option value="PECS_HIGHMC">PECS Court High Wycombe Magistrates Court</option>
+            <option value="PECS_HIGBMC">PECS Court Highbury Corner Magistrates Court</option>
+            <option value="PECS_HRSHCT">PECS Court Horsham County Court</option>
+            <option value="PECS_HRSHMC">PECS Court Horsham Magistrates Court</option>
+            <option value="PECS_HOVECC">PECS Court Hove Crown Court</option>
+            <option value="PECS_HUDRCT">PECS Court Huddersfield County Court</option>
+            <option value="PECS_HUDRMC">PECS Court Huddersfield Magistrates Court</option>
+            <option value="PECS_HUNTCT">PECS Court Huntingdon County Court</option>
+            <option value="PECS_ILFDCT">PECS Court Ilford County Court</option>
+            <option value="PECS_INNRCC">PECS Court Inner London Crown Court</option>
+            <option value="PECS_IPSWCT">PECS Court Ipswich County Court</option>
+            <option value="PECS_IPSWCC">PECS Court Ipswich Crown Court</option>
+            <option value="PECS_IPSWMC">PECS Court Ipswich Magistrates Court</option>
+            <option value="PECS_ISLWCC">PECS Court Isleworth Crown Court</option>
+            <option value="PECS_KGHLCT">PECS Court Keighley County Court</option>
+            <option value="PECS_KENDCT">PECS Court Kendal County Court</option>
+            <option value="PECS_KTTRCT">PECS Court Kettering County Court</option>
+            <option value="PECS_KDDRCT">PECS Court Kidderminster County Court</option>
+            <option value="PECS_KIDDMC">PECS Court Kidderminster Magistrates Court</option>
+            <option value="PECS_KNGSCT">PECS Court King&#39;s Lynn County Court</option>
+            <option value="PECS_KLYNMC">PECS Court King&#39;s Lynn Magistrates Court</option>
+            <option value="PECS_KNGHCT">PECS Court Kingston-upon-Hull County Court</option>
+            <option value="PECS_KINGCC">PECS Court Kingston-upon-Hull Crown Court</option>
+            <option value="PECS_KNGHMC">PECS Court Kingston-upon-Hull Magistrates Court</option>
+            <option value="PECS_KNGTCT">PECS Court Kingston-upon-Thames County Court</option>
+            <option value="PECS_KNGTCC">PECS Court Kingston-upon-Thames Crown Court</option>
+            <option value="PECS_LEAMCT">PECS Court Leamington Spa County Court</option>
+            <option value="PECS_LEEDCT">PECS Court Leeds County Court</option>
+            <option value="PECS_LEEDCC">PECS Court Leeds Crown Court</option>
+            <option value="PECS_LEEDMC">PECS Court Leeds Magistrates Court</option>
+            <option value="PECS_LEICCT">PECS Court Leicester County Court</option>
+            <option value="PECS_LEICCC">PECS Court Leicester Crown Court</option>
+            <option value="PECS_LEICMC">PECS Court Leicester Magistrates Court</option>
+            <option value="PECS_LEIGCT">PECS Court Leigh County Court</option>
+            <option value="PECS_LEWSCT">PECS Court Lewes County Court</option>
+            <option value="PECS_LEWSCC">PECS Court Lewes Crown Court</option>
+            <option value="PECS_LINCCT">PECS Court Lincoln County Court</option>
+            <option value="PECS_LINCCC">PECS Court Lincoln Crown Court</option>
+            <option value="PECS_LINCMC">PECS Court Lincoln Magistrates Court</option>
+            <option value="PECS_LVRPCC">PECS Court Liverpool Crown Court</option>
+            <option value="PECS_LVRDMC">PECS Court Liverpool Magistrates Court</option>
+            <option value="PECS_LLNWMC">PECS Court Llandrindod Wells Magistrates Court</option>
+            <option value="PECS_LLDUMC">PECS Court Llandudno Magistrates Court</option>
+            <option value="PECS_LLNLCT">PECS Court Llanelli County Court</option>
+            <option value="PECS_LLNLMC">PECS Court Llanelli Magistrates Court</option>
+            <option value="PECS_LLNGCT">PECS Court Llangefni County Court</option>
+            <option value="PECS_LGHBMC">PECS Court Loughborough Magistrates Court</option>
+            <option value="PECS_LWSTCT">PECS Court Lowestoft County Court</option>
+            <option value="PECS_LUDLCT">PECS Court Ludlow County Court</option>
+            <option value="PECS_LUTNCT">PECS Court Luton County Court</option>
+            <option value="PECS_LUTNCC">PECS Court Luton Crown Court</option>
+            <option value="PECS_LUTNMC">PECS Court Luton Magistrates Court</option>
+            <option value="PECS_MDSTCT">PECS Court Maidstone County Court</option>
+            <option value="PECS_MDSTCC">PECS Court Maidstone Crown Court</option>
+            <option value="PECS_MDSTMC">PECS Court Maidstone Magistrates Court</option>
+            <option value="PECS_MANCCT">PECS Court Manchester Civil Justice Centre</option>
+            <option value="PECS_MNCHCT">PECS Court Manchester County Court</option>
+            <option value="PECS_MNCCCC">PECS Court Manchester Crown Court (at Crown Square)</option>
+            <option value="PECS_MNCMCC">PECS Court Manchester Crown Court (at Minshull Street)</option>
+            <option value="PECS_MNCHMC">PECS Court Manchester Magistrates Court</option>
+            <option value="PECS_MNSFCT">PECS Court Mansfield County Court</option>
+            <option value="PECS_MNSFMC">PECS Court Mansfield Magistrates Court</option>
+            <option value="PECS_MRGTMC">PECS Court Margate Magistrates Court</option>
+            <option value="PECS_MDWYCT">PECS Court Medway County Court</option>
+            <option value="PECS_MEDWMC">PECS Court Medway Magistrates Court</option>
+            <option value="PECS_MLTNCT">PECS Court Melton Mowbray County Court</option>
+            <option value="PECS_MRTHCT">PECS Court Merthyr Tydfil County Court</option>
+            <option value="PECS_MDDLMC">PECS Court Middlesbrough (Teeside) Magistrates Court</option>
+            <option value="PECS_MDDLCT">PECS Court Middlesbrough County Court</option>
+            <option value="PECS_MLTKCT">PECS Court Milton Keynes County Court</option>
+            <option value="PECS_MLTKMC">PECS Court Milton Keynes Magistrates Court</option>
+            <option value="PECS_MOLDCT">PECS Court Mold County Court</option>
+            <option value="PECS_NLSNCT">PECS Court Nelson County Court</option>
+            <option value="PECS_NWRKCT">PECS Court Newark County Court</option>
+            <option value="PECS_NWBRCT">PECS Court Newbury County Court</option>
+            <option value="PECS_NEWLMC">PECS Court Newcastle-Under-Lyme Magistrates Court</option>
+            <option value="PECS_NWCSCT">PECS Court Newcastle-Upon-Tyne County Court</option>
+            <option value="PECS_NWCSCC">PECS Court Newcastle-Upon-Tyne Crown Court (Moot Hall)</option>
+            <option value="PECS_NWCSMC">PECS Court Newcastle-Upon-Tyne Magistrates Court</option>
+            <option value="PECS_STRAMC">PECS Court Newham Stratford Magistrates Court</option>
+            <option value="PECS_NWPRCT">PECS Court Newport (IoW) County Court</option>
+            <option value="PECS_NWPRMC">PECS Court Newport (IoW) Magistrates Court</option>
+            <option value="PECS_NWPWCT">PECS Court Newport (South Wales) County Court</option>
+            <option value="PECS_NWPRCC">PECS Court Newport (South Wales) Crown Court</option>
+            <option value="PECS_NEWPMC">PECS Court Newport (South Wales) Magistrates Court</option>
+            <option value="PECS_NWTAMC">PECS Court Newton Abbot Magistrates Court</option>
+            <option value="PECS_NRTSCT">PECS Court North Shields County Court</option>
+            <option value="PECS_NRTSMC">PECS Court North Shields Magistrates Court</option>
+            <option value="PECS_NORSMC">PECS Court North Somerset Magistrates Court</option>
+            <option value="PECS_NORAMC">PECS Court Northallerton Magistrates Court</option>
+            <option value="PECS_NRTHCT">PECS Court Northampton County Court</option>
+            <option value="PECS_NRTHCC">PECS Court Northampton Crown Court</option>
+            <option value="PECS_NRTHMC">PECS Court Northampton Magistrates Court</option>
+            <option value="PECS_NRTWCT">PECS Court Northwich County Court</option>
+            <option value="PECS_NORWCT">PECS Court Norwich County Court</option>
+            <option value="PECS_NORWCC">PECS Court Norwich Crown Court</option>
+            <option value="PECS_NORWMC">PECS Court Norwich Magistrates Court</option>
+            <option value="PECS_NOTTCT">PECS Court Nottingham County Court</option>
+            <option value="PECS_NOTTCC">PECS Court Nottingham Crown Court</option>
+            <option value="PECS_NOTTMC">PECS Court Nottingham Magistrates Court</option>
+            <option value="PECS_NUNTCT">PECS Court Nuneaton County Court</option>
+            <option value="PECS_NUNEMC">PECS Court Nuneaton Magistrates Court</option>
+            <option value="PECS_OLDHCT">PECS Court Oldham County Court</option>
+            <option value="PECS_OSWSCT">PECS Court Oswestry County Court</option>
+            <option value="PECS_OXFDCT">PECS Court Oxford County Court</option>
+            <option value="PECS_OXFDCC">PECS Court Oxford Crown Court</option>
+            <option value="PECS_OXFRMC">PECS Court Oxford Magistrates Court</option>
+            <option value="PECS_PENRCT">PECS Court Penrith County Court</option>
+            <option value="PECS_PENZCT">PECS Court Penzance County Court</option>
+            <option value="PECS_PBORCT">PECS Court Peterborough County Court</option>
+            <option value="PECS_PBORCC">PECS Court Peterborough Crown Court</option>
+            <option value="PECS_PBORMC">PECS Court Peterborough Magistrates Court</option>
+            <option value="PECS_PTRLMC">PECS Court Peterlee Magistrates Court</option>
+            <option value="PECS_PLYMCT">PECS Court Plymouth County Court</option>
+            <option value="PECS_PLYMCC">PECS Court Plymouth Crown Court</option>
+            <option value="PECS_PLYMMC">PECS Court Plymouth Magistrates Court</option>
+            <option value="PECS_PONTCT">PECS Court Pontefract County Court</option>
+            <option value="PECS_PNTPCT">PECS Court Pontypool County Court</option>
+            <option value="PECS_PNTYCT">PECS Court Pontypridd County Court</option>
+            <option value="PECS_POOLCT">PECS Court Poole County Court</option>
+            <option value="PECS_POOLMC">PECS Court Poole Magistrates Court</option>
+            <option value="PECS_PRTTMC">PECS Court Port Talbot Magistrates Court</option>
+            <option value="PECS_PRTSCT">PECS Court Portsmouth County Court</option>
+            <option value="PECS_PRTSCC">PECS Court Portsmouth Crown Court</option>
+            <option value="PECS_PRTSMC">PECS Court Portsmouth Magistrates Court</option>
+            <option value="PECS_PRESCT">PECS Court Preston County Court</option>
+            <option value="PECS_PRESCC">PECS Court Preston Crown Court</option>
+            <option value="PECS_PRSHCC">PECS Court Preston Crown Court (at Sessions House)</option>
+            <option value="PECS_PRESMC">PECS Court Preston Magistrates Court</option>
+            <option value="PECS_RWTNCT">PECS Court Rawtenstall County Court</option>
+            <option value="PECS_READCT">PECS Court Reading County Court</option>
+            <option value="PECS_READCC">PECS Court Reading Crown Court</option>
+            <option value="PECS_READMC">PECS Court Reading Magistrates Court</option>
+            <option value="PECS_RDDTCT">PECS Court Redditch County Court</option>
+            <option value="PECS_RDDTMC">PECS Court Redditch Magistrates Court</option>
+            <option value="PECS_RDHLMC">PECS Court Redhill Magistrates Court</option>
+            <option value="PECS_REIGCT">PECS Court Reigate County Court</option>
+            <option value="PECS_RCHTMC">PECS Court Richmond upon Thames Magistrates Court</option>
+            <option value="PECS_RMFRCT">PECS Court Romford County Court</option>
+            <option value="PECS_RMFRMC">PECS Court Romford Magistrates Court</option>
+            <option value="PECS_ROTHCT">PECS Court Rotherham County Court</option>
+            <option value="PECS_RGBYCT">PECS Court Rugby County Court</option>
+            <option value="PECS_RHYLCT">PECS Court Ryhl County Court</option>
+            <option value="PECS_SLFRCT">PECS Court Salford County Court</option>
+            <option value="PECS_SALSCT">PECS Court Salisbury County Court</option>
+            <option value="PECS_SCRBCT">PECS Court Scarborough County Court</option>
+            <option value="PECS_SCARMC">PECS Court Scarborough Magistrates Court</option>
+            <option value="PECS_SCUNCT">PECS Court Scunthorpe County Court</option>
+            <option value="PECS_SEFTMC">PECS Court Sefton Magistrates Court</option>
+            <option value="PECS_SEVNMC">PECS Court Sevenoaks Magistrates Court</option>
+            <option value="PECS_SHEFCT">PECS Court Sheffield County Court</option>
+            <option value="PECS_SHEFCC">PECS Court Sheffield Crown Court</option>
+            <option value="PECS_SHEFMC">PECS Court Sheffield Magistrates Court</option>
+            <option value="PECS_SHRDCT">PECS Court Shoreditch County Court</option>
+            <option value="PECS_SHRWCT">PECS Court Shrewsbury County Court</option>
+            <option value="PECS_SHRWCC">PECS Court Shrewsbury Crown Court</option>
+            <option value="PECS_SKEGCT">PECS Court Skegness County Court</option>
+            <option value="PECS_SKIPCT">PECS Court Skipton County Court</option>
+            <option value="PECS_SKIPMC">PECS Court Skipton Magistrates Court</option>
+            <option value="PECS_SLOUCT">PECS Court Slough County Court</option>
+            <option value="PECS_SLOUMC">PECS Court Slough Magistrates Court</option>
+            <option value="PECS_SNARCC">PECS Court Snaresbrook Crown Court</option>
+            <option value="PECS_STHSCT">PECS Court South Shields County Court</option>
+            <option value="PECS_STHMMC">PECS Court South Shields Magistrates Court</option>
+            <option value="PECS_SOUTMC">PECS Court Southampton (WH) Magistrates Court</option>
+            <option value="PECS_STHMCT">PECS Court Southampton County Court</option>
+            <option value="PECS_SOUTCC">PECS Court Southampton Crown Court</option>
+            <option value="PECS_STHNCT">PECS Court Southend County Court</option>
+            <option value="PECS_SOUTCT">PECS Court Southport County Court</option>
+            <option value="PECS_STHWCC">PECS Court Southwark Crown Court</option>
+            <option value="PECS_STALCT">PECS Court St Albans County Court</option>
+            <option value="PECS_STALCC">PECS Court St Albans Crown Court</option>
+            <option value="PECS_STALMC">PECS Court St Albans Magistrates Court</option>
+            <option value="PECS_STHECT">PECS Court St Helens County Court</option>
+            <option value="PECS_STAFCC">PECS Court Stafford Crown Court</option>
+            <option value="PECS_STAFMC">PECS Court Stafford Magistrates Court</option>
+            <option value="PECS_STAICT">PECS Court Staines County Court</option>
+            <option value="PECS_STAIMC">PECS Court Staines Magistrates Court</option>
+            <option value="PECS_STEVMC">PECS Court Stevenage Magistrates Court</option>
+            <option value="PECS_STOCCT">PECS Court Stockport County Court</option>
+            <option value="PECS_STOCMC">PECS Court Stockport Magistrates Court</option>
+            <option value="PECS_STOKCT">PECS Court Stoke-on-Trent County Court</option>
+            <option value="PECS_STOTMC">PECS Court Stoke-on-Trent Magistrates Court</option>
+            <option value="PECS_STOUCT">PECS Court Stourbridge County Court</option>
+            <option value="PECS_STRFCT">PECS Court Stratford-upon-Avon County Court</option>
+            <option value="PECS_SUNDCT">PECS Court Sunderland County Court</option>
+            <option value="PECS_CUCOCT">PECS Court Surrey Coroners Court</option>
+            <option value="PECS_SUTTMC">PECS Court Sutton Magistrates Court</option>
+            <option value="PECS_SWNSCT">PECS Court Swansea County Court</option>
+            <option value="PECS_SWANCC">PECS Court Swansea Crown Court (at St Helens Road)</option>
+            <option value="PECS_SWNGMC">PECS Court Swansea Magistrates Court</option>
+            <option value="PECS_SWINCT">PECS Court Swindon County Court</option>
+            <option value="PECS_SWINCC">PECS Court Swindon Crown Court</option>
+            <option value="PECS_SWINMC">PECS Court Swindon Magistrates Court</option>
+            <option value="PECS_TAMWCT">PECS Court Tamworth County Court</option>
+            <option value="PECS_TAUNCT">PECS Court Taunton County Court</option>
+            <option value="PECS_TAUNCC">PECS Court Taunton Crown Court</option>
+            <option value="PECS_TAUNMC">PECS Court Taunton Magistrates Court</option>
+            <option value="PECS_TEESCC">PECS Court Teeside Crown Court</option>
+            <option value="PECS_TELFCT">PECS Court Telford County Court</option>
+            <option value="PECS_TELFMC">PECS Court Telford Magistrates Court</option>
+            <option value="PECS_THMSMC">PECS Court Thames Magistrates Court</option>
+            <option value="PECS_THANCT">PECS Court Thanet County Court</option>
+            <option value="PECS_CITYCT">PECS Court The Mayor&#39;s and City of London County Court</option>
+            <option value="PECS_TORQCT">PECS Court Torquay and Newton Abbot County Court</option>
+            <option value="PECS_TRWBCT">PECS Court Trowbridge County Court</option>
+            <option value="PECS_TRURCT">PECS Court Truro County Court</option>
+            <option value="PECS_TRURCC">PECS Court Truro Crown Court</option>
+            <option value="PECS_TRURMC">PECS Court Truro Magistrates Court</option>
+            <option value="PECS_UXBRCT">PECS Court Uxbridge County Court</option>
+            <option value="PECS_UXBRMC">PECS Court Uxbridge Magistrates Court</option>
+            <option value="PECS_WAKFCT">PECS Court Wakefield County Court</option>
+            <option value="PECS_WALSCT">PECS Court Walsall County Court</option>
+            <option value="PECS_WLSSMC">PECS Court Walsall Magistrates Court</option>
+            <option value="PECS_WNDSCT">PECS Court Wandsworth County Court</option>
+            <option value="PECS_WRWCCT">PECS Court Warwick County Court</option>
+            <option value="PECS_WATFCT">PECS Court Watford County Court</option>
+            <option value="PECS_WELBCT">PECS Court Wellingborough County Court</option>
+            <option value="PECS_WELBMC">PECS Court Wellingborough Magistrates Court</option>
+            <option value="PECS_WLSHCT">PECS Court Welshpool and Newtown County Court</option>
+            <option value="PECS_WLSHMC">PECS Court Welshpool Magistrates Court</option>
+            <option value="PECS_WLONCT">PECS Court West London County Court</option>
+            <option value="PECS_WESTMC">PECS Court Westminster Magistrates Court</option>
+            <option value="PECS_WSPMCT">PECS Court Weston-super-Mare County Court</option>
+            <option value="PECS_WEYMCT">PECS Court Weymouth &amp; Dorchester County Court</option>
+            <option value="PECS_WEYMMC">PECS Court Weymouth Magistrates Court</option>
+            <option value="PECS_WHTHCT">PECS Court Whitehaven County Court</option>
+            <option value="PECS_WIGNCT">PECS Court Wigan County Court</option>
+            <option value="PECS_WIGNMC">PECS Court Wigan Magistrates Court</option>
+            <option value="PECS_BRENMC">PECS Court Willesden (Brent) Magistrates Court</option>
+            <option value="PECS_WILSCT">PECS Court Willesden County Court</option>
+            <option value="PECS_WMBLMC">PECS Court Wimbledon Magistrates Court</option>
+            <option value="PECS_WNCHCT">PECS Court Winchester County Court</option>
+            <option value="PECS_WNCHCC">PECS Court Winchester Crown Court</option>
+            <option value="PECS_WINCMC">PECS Court Winchester Magistrates Court</option>
+            <option value="PECS_WLVRCT">PECS Court Wolverhampton County Court</option>
+            <option value="PECS_WLVRCC">PECS Court Wolverhampton Crown Court</option>
+            <option value="PECS_WLVRMC">PECS Court Wolverhampton Magistrates Court</option>
+            <option value="PECS_WDGRCC">PECS Court Wood Green Crown Court</option>
+            <option value="PECS_WOOLCC">PECS Court Woolwich Crown Court</option>
+            <option value="PECS_WRCSCT">PECS Court Worcester County Court</option>
+            <option value="PECS_WRCSCC">PECS Court Worcester Crown Court</option>
+            <option value="PECS_WRCSMC">PECS Court Worcester Magistrates Court</option>
+            <option value="PECS_WORNMC">PECS Court Workington (West Cumbria) Magistrates Ct</option>
+            <option value="PECS_WORKCT">PECS Court Worksop County Court</option>
+            <option value="PECS_WORTCT">PECS Court Worthing County Court</option>
+            <option value="PECS_WORTMC">PECS Court Worthing Magistrates Court</option>
+            <option value="PECS_WREXCT">PECS Court Wrexham County Court</option>
+            <option value="PECS_WREXMC">PECS Court Wrexham Magistrates Court</option>
+            <option value="PECS_YEOVCT">PECS Court Yeovil County Court</option>
+            <option value="PECS_YEOVMC">PECS Court Yeovil Magistrates Court</option>
+            <option value="PECS_YORKCT">PECS Court York County Court</option>
+            <option value="PECS_YORKCC">PECS Court York Crown Court</option>
+            <option value="PECS_YORKMC">PECS Court York Magistrates Court</option>
+            <option value="PECS_AVS">PECS Police Force Avon &amp; Somerset</option>
+            <option value="PECS_BDS">PECS Police Force Bedfordshire</option>
+            <option value="PECS_BTP">PECS Police Force British Transport Police</option>
+            <option value="PECS_CAM">PECS Police Force Cambridgeshire</option>
+            <option value="PECS_CHE">PECS Police Force Cheshire</option>
+            <option value="PECS_CLP">PECS Police Force City of London</option>
+            <option value="PECS_CVL">PECS Police Force Cleveland</option>
+            <option value="PECS_CMB">PECS Police Force Cumbria</option>
+            <option value="PECS_DRB">PECS Police Force Derbyshire</option>
+            <option value="PECS_DC">PECS Police Force Devon &amp; Cornwall</option>
+            <option value="PECS_DST">PECS Police Force Dorset</option>
+            <option value="PECS_DHM">PECS Police Force Durham</option>
+            <option value="PECS_DP">PECS Police Force Dyfed-Powys</option>
+            <option value="PECS_ESX">PECS Police Force Essex</option>
+            <option value="PECS_GCS">PECS Police Force Gloucestershire</option>
+            <option value="PECS_GMP">PECS Police Force Greater Manchester</option>
+            <option value="PECS_GWN">PECS Police Force Gwent</option>
+            <option value="PECS_HNT">PECS Police Force Hampshire</option>
+            <option value="PECS_HRT">PECS Police Force Hertfordshire</option>
+            <option value="PECS_HMB">PECS Police Force Humberside</option>
+            <option value="PECS_KNT">PECS Police Force Kent</option>
+            <option value="PECS_LAN">PECS Police Force Lancashire</option>
+            <option value="PECS_LCS">PECS Police Force Leicester</option>
+            <option value="PECS_LNC">PECS Police Force Lincolnshire</option>
+            <option value="PECS_MRS">PECS Police Force Merseyside</option>
+            <option value="PECS_MPS">PECS Police Force Metropolitan Police Service</option>
+            <option value="PECS_NFL">PECS Police Force Norfolk</option>
+            <option value="PECS_NWA">PECS Police Force North Wales</option>
+            <option value="PECS_NYK">PECS Police Force North Yorkshire</option>
+            <option value="PECS_NTH">PECS Police Force Northamptonshire</option>
+            <option value="PECS_NRU">PECS Police Force Northumbria</option>
+            <option value="PECS_NTS">PECS Police Force Nottinghamshire</option>
+            <option value="PECS_SWL">PECS Police Force South Wales</option>
+            <option value="PECS_SYP">PECS Police Force South Yorkshire</option>
+            <option value="PECS_STF">PECS Police Force Staffordshire</option>
+            <option value="PECS_SFL">PECS Police Force Suffolk</option>
+            <option value="PECS_SRY">PECS Police Force Surrey</option>
+            <option value="PECS_SUS">PECS Police Force Sussex</option>
+            <option value="PECS_TVP">PECS Police Force Thames Valley</option>
+            <option value="PECS_WWW">PECS Police Force Warwickshire</option>
+            <option value="PECS_WWM">PECS Police Force West Mercia</option>
+            <option value="PECS_WMP">PECS Police Force West Midlands</option>
+            <option value="PECS_WYP">PECS Police Force West Yorkshire</option>
+            <option value="PECS_WLT">PECS Police Force Wiltshire</option>
+            <option value="PECS_SCH1">PECS SCH Adel Beck Secure Children&#39;s Home</option>
+            <option value="PECS_SCH2">PECS SCH Aldine House Secure Children&#39;s Centre</option>
+            <option value="PECS_SCH3">PECS SCH Aycliffe Secure Centre</option>
+            <option value="PECS_SCH4">PECS SCH Barton Moss Secure Care Centre</option>
+            <option value="PECS_SCH5">PECS SCH Clayfields House</option>
+            <option value="PECS_SCH6">PECS SCH Hillside Secure Centre</option>
+            <option value="PECS_SCH8">PECS SCH Lincolnshire Secure Unit</option>
+            <option value="PECS_SCH9">PECS SCH Vinney Green Secure Unit</option>
+            <option value="PECS_STC3">PECS STC Oakhill Secure Training Centre</option>
+            <option value="PECS_STC2">PECS STC Rainsbrook Secure Training Centre</option>
+            <option value="PECS_SUPPLIER1">PECS Test Supplier 1</option>
+            <option value="PECS_SUPPLIER2">PECS Test Supplier 2</option>
+            <option value="SERCO">Serco PECS supplier</option>
+            <option value="SOC_NORTH_EAST">SOCU North East</option>
+            <option value="SOC_NORTH_WEST">SOCU North West</option>
+            <option value="VIDEO_LINK_COURT_USER">Video Link Court User</option>
+          </select>
+        </div>
+
+        {{ govukButton({
+          text: "Create",
+          href: "../maintain-external-users/JDOE"
+        }) }}
+  
+      </form>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

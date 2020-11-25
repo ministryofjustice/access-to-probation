@@ -1,0 +1,86 @@
+
+{% extends "layout-digital-prison-services.html" %}
+
+{% block pageTitle %}
+  Search for a user results - Key worker - Digital Prison Services
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../home-digital-prison-services"
+    },
+    {
+      text: "Manage user accounts",
+      href: "/manage-user-accounts/index"
+    },
+    {
+      text: "Manage user roles",
+      href: "index"
+    },
+    {
+      text: "Current profile roles"
+    }
+  ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+        John Doe's roles
+      </h1>
+
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption">Roles</caption>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">Global Appointment</td>
+            <td class="govuk-table__cell" style="text-align: right;"><a href='#' class='govuk-link'>Delete role</a></td>
+          </tr>
+        </tbody>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">Maintain Access Roles (admin)</td>
+            <td class="govuk-table__cell" style="text-align: right;"><a href='#' class='govuk-link'>Delete role</a></td>
+          </tr>
+        </tbody>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">Licence Responsible Officer</td>
+            <td class="govuk-table__cell" style="text-align: right;"><a href='#' class='govuk-link'>Delete role</a></td>
+          </tr>
+        </tbody>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">Maintain Auth Users (admin)</td>
+            <td class="govuk-table__cell" style="text-align: right;"><a href='#' class='govuk-link'>Delete role</a></td>
+          </tr>
+        </tbody>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">Global Search</td>
+            <td class="govuk-table__cell" style="text-align: right;"><a href='#' class='govuk-link'>Delete role</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="float:left">
+        {{ govukButton({
+          text: "Add another role",
+          href: "add-role"
+        }) }}
+      </div>
+      <a href="index" style="float: left; padding-left:14px; padding-top: 7px;" class="govuk-link govuk-heading-s govuk-link--no-visited-state">Search for a user</a>
+
+    </div>
+  </div>
+
+{% endblock %}

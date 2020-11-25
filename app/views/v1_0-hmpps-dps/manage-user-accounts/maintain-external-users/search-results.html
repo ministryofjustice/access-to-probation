@@ -1,0 +1,85 @@
+
+{% extends "layout-digital-prison-services.html" %}
+
+{% block pageTitle %}
+  Search for external user results - Key worker - Digital Prison Services
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../home-digital-prison-services"
+    },
+    {
+      text: "Manage user accounts",
+      href: "/manage-user-accounts/index"
+    },
+    {
+      text: "Maintain external users",
+      href: "index"
+    },
+    {
+      text: "Results"
+    }
+  ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Search for external user results
+      </h1>
+
+      <form action="search-user-results" method="get">
+        {{ govukInput({
+          label: {
+            text: "Username or email address",
+            classes: "govuk-label"
+          },
+          classes: "govuk-!-width-full",
+          id: "username-email-address",
+          name: "username-email-address",
+          value: "JDOE"
+        }) }}
+
+        {{ govukButton({
+          text: "Search",
+          href: "search-results"
+        }) }}
+      </form>
+    </div>
+
+    <div class="govuk-grid-column-full">
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Name</th>
+            <th scope="col" class="govuk-table__header">Username</th>
+            <th scope="col" class="govuk-table__header">Email</th>
+            <th scope="col" class="govuk-table__header">Locked</th>
+            <th scope="col" class="govuk-table__header">Enabled</th>
+            <th scope="col" class="govuk-table__header"></th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">John Doe</td>
+            <td class="govuk-table__cell">JDOE</td>
+            <td class="govuk-table__cell">john.doe@digital.justice.gov.uk</td>
+            <td class="govuk-table__cell">No</td>
+            <td class="govuk-table__cell">Yes</td>
+            <td class="govuk-table__cell" style="text-align: right;"><a href='JDOE' class='govuk-link'>Edit</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+{% endblock %}

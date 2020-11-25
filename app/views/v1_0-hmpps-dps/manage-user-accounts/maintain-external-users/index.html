@@ -1,0 +1,60 @@
+
+{% extends "layout-digital-prison-services.html" %}
+
+{% block pageTitle %}
+  Search for external user - Key worker - Digital Prison Services
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../home-digital-prison-services"
+    },
+    {
+      text: "Manage user accounts",
+      href: "/manage-user-accounts/index"
+    },
+    {
+      text: "Maintain external users"
+    }
+  ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Search for external user
+      </h1>
+      <p>
+
+      <form action="search-user" method="get">
+
+        {{ govukInput({
+          label: {
+            text: "Username or email address",
+            classes: "govuk-label"
+          },
+          classes: "govuk-!-width-full",
+          id: "username-email-address",
+          name: "username-email-address"
+        }) }}
+
+        {{ govukButton({
+          text: "Search",
+          href: "search-results"
+        }) }}
+  
+      </form>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

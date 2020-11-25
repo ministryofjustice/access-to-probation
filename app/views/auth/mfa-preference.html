@@ -1,0 +1,63 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  HMPPS Digital Services - Security Code Preference
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+      {{ govukRadios({
+        idPrefix: "mfa-preference",
+        name: "mfa-preference",
+        fieldset: {
+          legend: {
+            text: "How would you prefer to receive your security code?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "A security code will be sent every time you log in from an unapproved network"
+        },
+        items: [
+          {
+            value: "email",
+            html: "<strong>By email</strong>",
+            hint: {
+              html: "You will receive a 6 digit number to<br>john.doe@digital.justice.gov.uk"
+            }
+          },
+          {
+            value: "text-message",
+            html: "<strong>By text message</strong>",
+            hint: {
+              text: "You will receive a 6 digit number to 07770123456 by text message"
+            }
+          },
+          {
+            value: "backup-email",
+            html: "<strong>By backup email</strong>",
+            hint: {
+              text: "You will receive a 6 digit number to john.doe@justice.gov.uk"
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Save",
+        href: "account-details"
+      }) }}
+
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

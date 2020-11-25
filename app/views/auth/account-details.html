@@ -1,0 +1,169 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  HMPPS Digital Services - Your Account Details
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "../select-service"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+        Your account details
+      </h1>
+
+      <p class="govuk-body">
+        <a href="existing-password">Change your password</a>
+      </p>
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: "John Doe"
+      },
+      actions: {
+        items: [
+          {
+            href: "change-name",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Username"
+      },
+      value: {
+        text: "JDOE"
+      }
+    },
+    {
+      key: {
+        text: "Last signed in"
+      },
+      value: {
+        text: "23 November 2020, 13:06"
+      }
+    },
+    {
+      key: {
+        text: "Email address"
+      },
+      value: {
+        text: "john.doe@digital.justice.gov.uk"
+      },
+      actions: {
+        items: [
+          {
+            href: "existing-email",
+            text: "Change",
+            visuallyHiddenText: "email address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Verified email"
+      },
+      value: {
+        text: "Yes"
+      }
+    },
+    {
+      key: {
+        text: "Backup email"
+      },
+      value: {
+        text: "john.doe@justice.gov.uk"
+      },
+      actions: {
+        items: [
+          {
+            href: "new-backup-email",
+            text: "Change",
+            visuallyHiddenText: "backup email"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Verified backup email"
+      },
+      value: {
+        text: "No"
+      },
+      actions: {
+        items: [
+          {
+            href: "verify-secondary-email-resend",
+            text: "Resend code",
+            visuallyHiddenText: "resend code"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Mobile number"
+      },
+      value: {
+        text: "07770123456"
+      },
+      actions: {
+        items: [
+          {
+            href: "change-mobile",
+            text: "Change",
+            visuallyHiddenText: "mobile number"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Verified mobile"
+      },
+      value: {
+        text: "Yes"
+      }
+    },
+    {
+      key: {
+        text: "2-step verification"
+      },
+      value: {
+        text: "Email"
+      },
+      actions: {
+        items: [
+          {
+            href: "mfa-preference",
+            text: "Change",
+            visuallyHiddenText: "2-step verfication"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+    </div>
+  </div>
+
+{% endblock %}

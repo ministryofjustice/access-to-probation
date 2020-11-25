@@ -1,0 +1,47 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  HMPPS Digital Services - Update Personal Details
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+        Update personal details
+      </h1>
+
+      {{ govukInput({
+        label: {
+          text: "First name"
+        },
+        classes: "govuk-!-width-two-thirds",
+        id: "first-name",
+        value: "John",
+        name: "first-name"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Last name"
+        },
+        classes: "govuk-!-width-two-thirds",
+        id: "last-name",
+        value: "Doe",
+        name: "last-name"
+      }) }}
+
+      {{ govukButton({
+        text: "Save",
+        href: "account-details"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

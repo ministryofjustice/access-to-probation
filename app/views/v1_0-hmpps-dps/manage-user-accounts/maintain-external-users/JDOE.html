@@ -1,0 +1,149 @@
+
+{% extends "layout-digital-prison-services.html" %}
+
+{% block pageTitle %}
+  - Digital Prison Services
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../home-digital-prison-services"
+    },
+    {
+      text: "Manage user accounts",
+      href: "/manage-user-accounts/index"
+    },
+    {
+      text: "Maintain external users",
+      href: "index"
+    },
+    {
+      text: "John Doe"
+    }
+  ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+        John Doe
+      </h1>
+
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row user-enabled-status">
+            <td scope="row" class="govuk-table__cell" style="border-bottom: 0;"><strong class="govuk-tag govuk-tag--turquoise" data-qa="enabled">Active account</strong></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric govuk-!-width-one-quarter" style="text-align: right; border-bottom: 0;"><a href="#" class="govuk-link" data-qa="enable-button">Deactivate account</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption">Account details</caption>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">Username</td>
+            <td class="govuk-table__cell">JDOE</td>
+            <td class="govuk-table__cell" style="text-align: right;"></a></td>
+          </tr>
+        </tbody>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">Email</td>
+            <td class="govuk-table__cell">john.doe@digital.justice.gov.uk</td>
+            <td class="govuk-table__cell" style="text-align: right;"><a href='change-email' class='govuk-link'>Change email</a></td>
+          </tr>
+        </tbody>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">Verified</td>
+            <td class="govuk-table__cell">Yes</td>
+            <td class="govuk-table__cell" style="text-align: right;"></a></td>
+          </tr>
+        </tbody>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">Locked</td>
+            <td class="govuk-table__cell">No</td>
+            <td class="govuk-table__cell" style="text-align: right;"></td>
+          </tr>
+        </tbody>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">Last logged in</td>
+            <td class="govuk-table__cell">23 November 2020 - 13:06:03</td>
+            <td class="govuk-table__cell" style="text-align: right;"></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption">Roles</caption>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">Global Appointment</td>
+            <td class="govuk-table__cell" style="text-align: right;"><a href='#' class='govuk-link'>Remove role</a></td>
+          </tr>
+        </tbody>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">Maintain Access Roles (admin)</td>
+            <td class="govuk-table__cell" style="text-align: right;"><a href='#' class='govuk-link'>Remove role</a></td>
+          </tr>
+        </tbody>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">Licence Responsible Officer</td>
+            <td class="govuk-table__cell" style="text-align: right;"><a href='#' class='govuk-link'>Remove role</a></td>
+          </tr>
+        </tbody>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">Maintain Auth Users (admin)</td>
+            <td class="govuk-table__cell" style="text-align: right;"><a href='#' class='govuk-link'>Remove role</a></td>
+          </tr>
+        </tbody>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">Global Search</td>
+            <td class="govuk-table__cell" style="text-align: right;"><a href='#' class='govuk-link'>Remove role</a></td>
+          </tr>
+        </tbody>
+      </table>
+      {{ govukButton({
+        text: "Add another role",
+        href: "select-roles"
+      }) }}
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption">Groups</caption>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">NPS North East</td>
+            <td class="govuk-table__cell" style="text-align: right;"><a href='#' class='govuk-link'>Remove from group</a></td>
+          </tr>
+        </tbody>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">CPA West Yorkshire</td>
+            <td class="govuk-table__cell" style="text-align: right;"><a href='#' class='govuk-link'>Remove from group</a></td>
+          </tr>
+        </tbody>
+      </table>
+      {{ govukButton({
+        text: "Add another group",
+        href: "select-groups"
+      }) }}
+    
+    </div>
+  </div>
+
+{% endblock %}

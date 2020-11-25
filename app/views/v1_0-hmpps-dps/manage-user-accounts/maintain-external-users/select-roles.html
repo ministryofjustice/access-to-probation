@@ -1,0 +1,158 @@
+
+{% extends "layout-digital-prison-services.html" %}
+
+{% block pageTitle %}
+  Select roles - Digital Prison Services
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../home-digital-prison-services"
+    },
+    {
+      text: "Manage user accounts",
+      href: "/manage-user-accounts/index"
+    },
+    {
+      text: "Maintain external users",
+      href: "index"
+    },
+    {
+      text: "John Doe",
+      href: "JDOE"
+    },
+    {
+      text: "Select roles"
+    }
+  ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="add-roles" method="get">
+
+        {{ govukCheckboxes({
+          idPrefix: "roles",
+          name: "waste",
+          fieldset: {
+            legend: {
+              text: "Select roles",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "artemis-user",
+              text: "Artemis user"
+            },
+            {
+              value: "auth-group-manager",
+              text: "Auth Group Manager"
+            },
+            {
+              value: "licence-batch-load-(admin)",
+              text: "Licence Batch Load (admin)"
+            },            
+            {
+              value: "licence-variation",
+              text: "Licence Variation"
+            },            
+            {
+              value: "maintain-roles",
+              text: "Maintain Roles"
+            },            
+            {
+              value: "multi-factor-authentication",
+              text: "Multi Factor Authentication"
+            },            
+            {
+              value: "pecs-court-user",
+              text: "PECS Court User"
+            },            
+            {
+              value: "pecs-journey-price-calculation",
+              text: "PECS Journey Price Calculation"
+            },            
+            {
+              value: "pecs-oca-officer",
+              text: "PECS O.C.A. Officer"
+            },            
+            {
+              value: "pecs-person-escort-record-author",
+              text: "PECS Person Escort Record Author"
+            },            
+            {
+              value: "pecs-police",
+              text: "PECS Police"
+            },            
+            {
+              value: "pecs-secure-childrens-home",
+              text: "PECS Secure Children's Home"
+            },            
+            {
+              value: "pecs-secure-training-centre",
+              text: "PECS Secure Training Centre"
+            },            
+            {
+              value: "pecs-supplier",
+              text: "PECS Supplier"
+            },            
+            {
+              value: "pathfinder-hq-user",
+              text: "Pathfinder HQ User"
+            },            
+            {
+              value: "pathfinder-national-reader",
+              text: "Pathfinder National Reader"
+            },            
+            {
+              value: "pathfinder-police",
+              text: "Pathfinder Police"
+            },            
+            {
+              value: "soc-prison-role",
+              text: "SOC Prison Role"
+            },            
+            {
+              value: "soc-probation-role",
+              text: "SOC Probation Role"
+            },
+            {
+              value: "soc-restricted-caseload",
+              text: "SOC Restricted Caseload"
+            },            
+            {
+              value: "video-link-court-user",
+              text: "Video Link Court User"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Confirm",
+          classes: "govuk-!-margin-right-1",
+          href: "JDOE"
+        }) }}
+
+        {{ govukButton({
+          text: "Cancel",
+          classes: "govuk-button--secondary",
+          href: "JDOE"
+        }) }}
+  
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

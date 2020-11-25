@@ -1,0 +1,128 @@
+
+{% extends "layout-digital-prison-services.html" %}
+
+{% block pageTitle %}
+  Add another role for John Doe - Key worker - Digital Prison Services
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../home-digital-prison-services"
+    },
+    {
+      text: "Manage user accounts",
+      href: "/manage-user-accounts/index"
+    },
+    {
+      text: "Manage user roles",
+      href: "index"
+    },
+    {
+      text: "Current profile roles",
+      href: "current-roles"
+    },
+    {
+      text: "Add role"
+    }
+  ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+        Add another role for John Doe
+      </h1>
+
+      <form action="select-groups" method="post">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="sort">
+          Select role
+        </label>
+        <select id="role-select" name="role-select" class="govuk-select widthAuto form-control">
+          <option value="--">-- Select --</option>
+          <option id="ACTIVITY_HUB_option" value="ACTIVITY_HUB">Activity Hub</option>
+          <option id="ADD_SENSITIVE_CASE_NOTES_option" value="ADD_SENSITIVE_CASE_NOTES">Add Sensitive Case Notes</option>
+          <option id="MOIC_ADMIN_option" value="MOIC_ADMIN">Admin MOIC Allocations</option>
+          <option id="ALLOC_CASE_MGR_option" value="ALLOC_CASE_MGR">Allocation Case Manager</option>
+          <option id="APPROVE_CATEGORISATION_option" value="APPROVE_CATEGORISATION">Approve Categorisation</option>
+          <option id="ARTEMIS_USER_option" value="ARTEMIS_USER">Artemis user</option>
+          <option id="BULK_APPOINTMENTS_option" value="BULK_APPOINTMENTS">Bulk Appointments</option>
+          <option id="CATEGORISATION_SECURITY_option" value="CATEGORISATION_SECURITY">Categorisation Security</option>
+          <option id="CATEGORISATION_READONLY_option" value="CATEGORISATION_READONLY">Categorisation read-only</option>
+          <option id="CHECK_MY_DIARY_ADMIN_option" value="CHECK_MY_DIARY_ADMIN">Check my diary Admin</option>
+          <option id="CELL_MOVE_option" value="CELL_MOVE">Complete cell move</option>
+          <option id="CREATE_CATEGORISATION_option" value="CREATE_CATEGORISATION">Create Categorisation</option>
+          <option id="CREATE_RECATEGORISATION_option" value="CREATE_RECATEGORISATION">Create Recategorisation</option>
+          <option id="GLOBAL_SEARCH_option" value="GLOBAL_SEARCH">Global Search</option>
+          <option id="MAINTAIN_IEP_option" value="MAINTAIN_IEP">IEP Maintenance</option>
+          <option id="OMIC_ADMIN_option" value="OMIC_ADMIN">Key-worker allocator</option>
+          <option id="KW_MIGRATION_option" value="KW_MIGRATION">Key-worker migration</option>
+          <option id="KEYWORKER_MONITOR_option" value="KEYWORKER_MONITOR">Key-worker monitor</option>
+          <option id="NOMIS_BATCHLOAD_option" value="NOMIS_BATCHLOAD">Licence Admin</option>
+          <option id="LICENCE_CA_option" value="LICENCE_CA">Licence Case Admin</option>
+          <option id="LICENCE_DM_option" value="LICENCE_DM">Licence Decision Maker</option>
+          <option id="LICENCE_READONLY_option" value="LICENCE_READONLY">Licence Read Only</option>
+          <option id="LICENCE_RO_option" value="LICENCE_RO">Licence Responsible Officer</option>
+          <option id="LICENCE_VARY_option" value="LICENCE_VARY">Licence Vary Role</option>
+          <option id="LICENCE_ROLE_option" value="LICENCE_ROLE">Licence roles (Not used)</option>
+          <option id="MAINTAIN_ACCESS_ROLES_option" value="MAINTAIN_ACCESS_ROLES">Maintain DPS user roles</option>
+          <option id="MAINTAIN_ACCESS_ROLES_ADMIN_option" value="MAINTAIN_ACCESS_ROLES_ADMIN">Maintain DPS user roles (adm)</option>
+          <option id="MAINTAIN_OAUTH_USERS_option" value="MAINTAIN_OAUTH_USERS">Maintain HMPPS auth users</option>
+          <option id="MFA_option" value="MFA">Multi Factor Authentication</option>
+          <option id="OAUTH_ADMIN_option" value="OAUTH_ADMIN">OAuth2 client management</option>
+          <option id="ROLE_PECS_OCA_option" value="ROLE_PECS_OCA">PECS O.C.A. Officer</option>
+          <option id="PECS_OCA_option" value="PECS_OCA">PECS O.C.A. Officer</option>
+          <option id="PECS_PMU_option" value="PECS_PMU">PECS PMU</option>
+          <option id="PECS_PER_AUTHOR_option" value="PECS_PER_AUTHOR">PECS Person Escort Auth</option>
+          <option id="PER_AUTHOR_option" value="PER_AUTHOR">PECS Person Escort Auth</option>
+          <option id="PECS_PRISON_option" value="PECS_PRISON">PECS Prison Officer</option>
+          <option id="POM_option" value="POM">POM User</option>
+          <option id="PPM_ANALYST_option" value="PPM_ANALYST">PPM Analyst</option>
+          <option id="PPM_AUTHORISING_OFFICER_option" value="PPM_AUTHORISING_OFFICER">PPM Authorising Officer</option>
+          <option id="PVB_ADMIN_option" value="PVB_ADMIN">PVB - Administrator</option>
+          <option id="PVB_REQUESTS_option" value="PVB_REQUESTS">PVB - Process requests</option>
+          <option id="PF_APPROVAL_option" value="PF_APPROVAL">Pathfinder Approval</option>
+          <option id="PF_HQ_option" value="PF_HQ">Pathfinder HQ Role</option>
+          <option id="PF_LOCAL_READER_option" value="PF_LOCAL_READER">Pathfinder Local Reader</option>
+          <option id="PF_NATIONAL_READER_option" value="PF_NATIONAL_READER">Pathfinder National Reader</option>
+          <option id="PF_STD_PRISON_RO_option" value="PF_STD_PRISON_RO">Pathfinder Prison Read Only</option>
+          <option id="PF_PSYCHOLOGIST_option" value="PF_PSYCHOLOGIST">Pathfinder Psychologist</option>
+          <option id="PF_STD_PRISON_option" value="PF_STD_PRISON">Pathfinder Standard Prison</option>
+          <option id="INACTIVE_BOOKINGS_option" value="INACTIVE_BOOKINGS">Released Prisoner Viewing</option>
+          <option id="SOC_CUSTODY_option" value="SOC_CUSTODY">SOC Prison Role</option>
+          <option id="UPDATE_ALERT_option" value="UPDATE_ALERT">Update Alert</option>
+          <option id="USE_OF_FORCE_COORDINATOR_option" value="USE_OF_FORCE_COORDINATOR">Use of force coordinator</option>
+          <option id="USE_OF_FORCE_REVIEWER_option" value="USE_OF_FORCE_REVIEWER">Use of force reviewer</option>
+          <option id="VIDEO_LINK_COURT_USER_option" value="VIDEO_LINK_COURT_USER">Video Link Court User</option>
+          <option id="VIEW_PRISONER_DATA_option" value="VIEW_PRISONER_DATA">View Prisoner Data</option>
+          <option id="VIEW_PROBATION_DOCUMENTS_option" value="VIEW_PROBATION_DOCUMENTS">View Probation Documents</option>
+          <option id="VIEW_SENSITIVE_CASE_NOTES_option" value="VIEW_SENSITIVE_CASE_NOTES">View Sensitive Case Notes</option>
+        </select>
+      </div>
+
+      {{ govukButton({
+        text: "Confirm",
+        classes: "govuk-!-margin-right-1",
+        href: "current-roles"
+      }) }}
+      {{ govukButton({
+        text: "Cancel",
+        classes: "govuk-button--secondary",
+        href: "current-roles"
+      }) }}
+
+    </form>
+
+    
+    </div>
+  </div>
+
+{% endblock %}

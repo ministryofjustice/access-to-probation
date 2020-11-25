@@ -1,0 +1,41 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  HMPPS Digital Services - Home
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-main-wrapper">
+      <h1 class="govuk-heading-l">
+        Select service
+      </h1>
+      <p>
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-third">
+            <h2 class="govuk-heading-m"><a href="#">Home Detention Curfew</a></h2>
+            <p class="govuk-body">Service for HDC Licences Creation and Approval</p>
+          </div>
+    
+          <div class="govuk-grid-column-one-third">
+            <h2 class="govuk-heading-m"><a href="manage-user-accounts/index">Manage user accounts</a></h2>
+            <p class="govuk-body"></p>
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+            <h2 class="govuk-heading-m"><a href="auth/account-details">Manage your account details</a></h2>
+            <p class="govuk-body"></p>
+          </div>
+
+        </div>
+      </p>
+    </div>
+  </div>
+
+{% endblock %}

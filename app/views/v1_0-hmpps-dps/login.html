@@ -1,0 +1,78 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  HMPPS Digital Services - Sign in
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukWarningText({
+        html: "This is a test service only - it does not contain any real details. 
+          Use the live <a href='https://sign-in.hmpps.service.justice.gov.uk/auth/'>HMPPS Digital Service</a> to view real details.",
+        iconFallbackText: "Warning"
+      }) }}
+
+      <h1 class="govuk-heading-l">
+        Sign in
+      </h1>
+      <p>
+
+      <form action="sign-in" method="get">
+
+        {{ govukInput({
+          label: {
+            text: "Username",
+            classes: "govuk-label"
+          },
+          classes: "govuk-input--width-20",
+          id: "username",
+          name: "username"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Password",
+            classes: 'govuk-label'
+          },
+          id: "password",
+          classes: "moj-password-reveal__input govuk-input--width-20",
+          name: "password",
+          type: "password"
+        }) }}
+
+        {{ govukButton({
+          text: "Sign in",
+          href: "select-service"
+        }) }}
+        
+        <p class="govuk-body">
+          <a href="#" class="govuk-link">Sign in with a justice.gov.uk email</a>
+        </p>
+
+        <h2 class="govuk-heading-m">
+          Problems signing in
+        </h1>
+
+        <p class="govuk-body">
+          <a href="https://sign-in-dev.hmpps.service.justice.gov.uk/auth/reset-password" class="govuk-link">I have forgotten my password</a>
+        </p>
+
+        {{ govukDetails({
+          summaryText: "Why won’t my password work?",
+          html:
+            "Your password is case sensitive which means you must enter your password exactly as you first created it. For example if your password is <strong>H3LloWorlD</strong> you must enter it exactly like that."
+        }) }}
+      
+      </form>
+
+      </p>
+    </div>
+  </div>
+
+{% endblock %}

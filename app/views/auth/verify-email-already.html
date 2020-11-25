@@ -1,0 +1,30 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  HMPPS Digital Services - Verify Email Confirmation
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Email already verified
+      </h1>
+      <p class="govuk-body">
+        Your email address has already been verified
+      </p>
+      
+      {{ govukButton({
+        text: "Ok, continue",
+        href: "account-details"
+      }) }}
+    
+    </div>
+  </div>
+
+{% endblock %}

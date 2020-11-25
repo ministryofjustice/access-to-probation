@@ -1,0 +1,72 @@
+
+{% extends "layout-digital-prison-services.html" %}
+
+{% block pageTitle %}
+  Change email - Digital Prison Services
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../home-digital-prison-services"
+    },
+    {
+      text: "Manage user accounts",
+      href: "/manage-user-accounts/index"
+    },
+    {
+      text: "Maintain external users",
+      href: "index"
+    },
+    {
+      text: "John Doe",
+      href: "JDOE"
+    },
+    {
+      text: "Change email"
+    }
+  ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="change-email-address" method="get">
+
+        {{ govukInput({
+          label: {
+            text: "Change email",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          value: "john.doe@digital.justice.gov.uk",
+          classes: "govuk-!-width-full",
+          id: "change-email-address",
+          name: "change-email-address"
+        }) }}
+
+        {{ govukButton({
+          text: "Confirm",
+          classes: "govuk-!-margin-right-1",
+          href: "JDOE"
+        }) }}
+
+        {{ govukButton({
+          text: "Cancel",
+          classes: "govuk-button--secondary",
+          href: "JDOE"
+        }) }}
+  
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

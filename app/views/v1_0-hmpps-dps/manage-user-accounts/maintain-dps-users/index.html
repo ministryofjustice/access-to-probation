@@ -1,0 +1,122 @@
+
+{% extends "layout-digital-prison-services.html" %}
+
+{% block pageTitle %}
+  Search for a user - Key worker - Digital Prison Services
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../home-digital-prison-services"
+    },
+    {
+      text: "Manage user accounts",
+      href: "/manage-user-accounts/index"
+    },
+    {
+      text: "Manage user roles"
+    }
+  ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Search for a user
+      </h1>
+
+
+      <p class="govuk-body">
+        You must search for a user by their name, username or role.
+        <br>
+        Names should be in the format 'Last name First name' or 'Last name'.
+      </p>
+        
+      <form>  
+        <div class="searchForm padding-top padding-bottom-large">
+          <div style="float: left">
+            <label class="govuk-label" for="name-filter">Name or username</label>
+            <input type="text" class="govuk-input govuk-!-width-full" id="name-filter" name="nameFilter" value="">
+          </div>
+          <div style="float: left; padding-left: 20px;">
+            <label class="govuk-label" for="role-select">Role</label>
+            <select class="govuk-select" id="role-select" name="role-select">
+              <option value="">All</option>
+              <option value="ACTIVITY_HUB">Activity Hub</option>
+              <option value="ADD_SENSITIVE_CASE_NOTES">Add Sensitive Case Notes</option>
+              <option value="MOIC_ADMIN">Admin MOIC Allocations</option>
+              <option value="ALLOC_CASE_MGR">Allocation Case Manager</option>
+              <option value="ALLOC_MGR">Allocation Manager</option>
+              <option value="APPROVE_CATEGORISATION">Approve Categorisation</option>
+              <option value="ARTEMIS_USER">Artemis user</option>
+              <option value="BULK_APPOINTMENTS">Bulk Appointments</option>
+              <option value="CATEGORISATION_SECURITY">Categorisation Security</option>
+              <option value="CATEGORISATION_READONLY">Categorisation read-only</option>
+              <option value="CHECK_MY_DIARY_ADMIN">Check my diary Admin</option>
+              <option value="CELL_MOVE">Complete cell move</option>
+              <option value="CREATE_CATEGORISATION">Create Categorisation</option>
+              <option value="CREATE_RECATEGORISATION">Create Recategorisation</option>
+              <option value="GLOBAL_SEARCH">Global Search</option>
+              <option value="MAINTAIN_IEP">IEP Maintenance</option>
+              <option value="OMIC_ADMIN">Key-worker allocator</option>
+              <option value="KW_MIGRATION">Key-worker migration</option>
+              <option value="KEYWORKER_MONITOR">Key-worker monitor</option>
+              <option value="NOMIS_BATCHLOAD">Licence Admin</option>
+              <option value="LICENCE_CA">Licence Case Admin</option>
+              <option value="LICENCE_DM">Licence Decision Maker</option>
+              <option value="LICENCE_READONLY">Licence Read Only</option>
+              <option value="LICENCE_RO">Licence Responsible Officer</option>
+              <option value="LICENCE_VARY">Licence Vary Role</option>
+              <option value="LICENCE_ROLE">Licence roles (Not used)</option>
+              <option value="MAINTAIN_ACCESS_ROLES">Maintain DPS user roles</option>
+              <option value="MAINTAIN_ACCESS_ROLES_ADMIN">Maintain DPS user roles (adm)</option>
+              <option value="MAINTAIN_OAUTH_USERS">Maintain HMPPS auth users</option>
+              <option value="MFA">Multi Factor Authentication</option>
+              <option value="OAUTH_ADMIN">OAuth2 client management</option>
+              <option value="ROLE_PECS_OCA">PECS O.C.A. Officer</option>
+              <option value="PECS_OCA">PECS O.C.A. Officer</option>
+              <option value="PECS_PMU">PECS PMU</option>
+              <option value="PECS_PER_AUTHOR">PECS Person Escort Auth</option>
+              <option value="PER_AUTHOR">PECS Person Escort Auth</option>
+              <option value="PECS_PRISON">PECS Prison Officer</option>
+              <option value="POM">POM User</option>
+              <option value="PPM_ANALYST">PPM Analyst</option>
+              <option value="PPM_AUTHORISING_OFFICER">PPM Authorising Officer</option>
+              <option value="PVB_ADMIN">PVB - Administrator</option>
+              <option value="PVB_REQUESTS">PVB - Process requests</option>
+              <option value="PF_APPROVAL">Pathfinder Approval</option>
+              <option value="PF_HQ">Pathfinder HQ Role</option>
+              <option value="PF_LOCAL_READER">Pathfinder Local Reader</option>
+              <option value="PF_NATIONAL_READER">Pathfinder National Reader</option>
+              <option value="PF_STD_PRISON_RO">Pathfinder Prison Read Only</option>
+              <option value="PF_PSYCHOLOGIST">Pathfinder Psychologist</option>
+              <option value="PF_STD_PRISON">Pathfinder Standard Prison</option>
+              <option value="INACTIVE_BOOKINGS">Released Prisoner Viewing</option>
+              <option value="SOC_CUSTODY">SOC Prison Role</option>
+              <option value="UPDATE_ALERT">Update Alert</option>
+              <option value="USE_OF_FORCE_COORDINATOR">Use of force coordinator</option>
+              <option value="USE_OF_FORCE_REVIEWER">Use of force reviewer</option>
+              <option value="VIDEO_LINK_COURT_USER">Video Link Court User</option>
+              <option value="VIEW_PROBATION_DOCUMENTS">View Probation Documents</option>
+              <option value="VIEW_SENSITIVE_CASE_NOTES">View Sensitive Case Notes</option>
+            </select>
+            {{ govukButton({
+              text: "Search",
+              href: "search-results"
+            }) }}
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

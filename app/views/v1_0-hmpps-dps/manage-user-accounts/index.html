@@ -1,0 +1,55 @@
+
+{% extends "layout-digital-prison-services.html" %}
+
+{% block pageTitle %}
+  Manage user accounts - Digital Prison Services
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../home-digital-prison-services"
+    },
+    {
+      text: "Manage user accounts"
+    }
+  ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-main-wrapper">
+      <h1 class="govuk-heading-l">
+        Manage user accounts
+      </h1>
+      <p>
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-third">
+            <h2 class="govuk-heading-m"><a href="maintain-dps-users/index">Maintain DPS users</a></h2>
+            <p class="govuk-body"></p>
+          </div>
+    
+          <div class="govuk-grid-column-one-third">
+            <h2 class="govuk-heading-m"><a href="maintain-external-users/index">Maintain external users</a></h2>
+            <p class="govuk-body"></p>
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+            <h2 class="govuk-heading-m"><a href="create-external-users/index">Create external users</a></h2>
+            <p class="govuk-body"></p>
+          </div>
+
+        </div>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}
