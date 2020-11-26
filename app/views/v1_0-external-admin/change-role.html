@@ -1,0 +1,55 @@
+
+{% extends "layout-external-admin.html" %}
+
+{% block pageTitle %}
+  External admin - Change role
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Change the account role
+      </h1>
+
+      {{ govukRadios({
+        classes: "govuk-radios",
+        idPrefix: "role",
+        name: "role",
+        fieldset: {
+          legend: {
+            text: "Additional caption or make it the header?"
+          }
+        },
+        items: [
+          {
+            value: "normal",
+            text: "Normal"
+          },
+          {
+            value: "read-only",
+            text: "Read only"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Confirm",
+        classes: "govuk-!-margin-right-1",
+        href: "PRIGGS"
+      }) }}
+      
+      {{ govukButton({
+        text: "Cancel",
+        classes: "govuk-button--secondary",
+        href: "PRIGGS"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

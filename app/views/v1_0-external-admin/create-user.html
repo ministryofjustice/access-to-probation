@@ -1,0 +1,104 @@
+
+{% extends "layout-external-admin.html" %}
+
+{% block pageTitle %}
+  External admin - Create new user
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "select-task"
+    },
+    {
+      text: "Create a new user account"
+    }
+  ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Create a new user account
+      </h1>
+
+      {{ govukInput({
+        label: {
+          text: "First name"
+        },
+        classes: "govuk-!-width-three-quarters",
+        id: "first-name",
+        name: "first-name"
+      }) }}
+      
+      {{ govukInput({
+        label: {
+          text: "Last name"
+        },
+        classes: "govuk-!-width-three-quarters",
+        id: "last-name",
+        name: "last-name"
+      }) }}
+      
+      {{ govukInput({
+        label: {
+          text: "Email address"
+        },
+        classes: "govuk-!-width-three-quarters",
+        id: "email-address",
+        name: "email-address"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Telephone number"
+        },
+        classes: "govuk-input--width-20",
+        id: "telephone-number",
+        name: "telephone-number"
+      }) }}
+
+      {{ govukRadios({
+        classes: "govuk-radios--small",
+        idPrefix: "role",
+        name: "role",
+        fieldset: {
+          legend: {
+            text: "Role",
+            isPageHeading: false          }
+        },
+        items: [
+          {
+            value: "normal",
+            text: "Normal"
+          },
+          {
+            value: "read-only",
+            text: "Read only"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Create account",
+        classes: "govuk-!-margin-right-1",
+        href: "create-user-success"
+      }) }}
+      
+      {{ govukButton({
+        text: "Cancel",
+        classes: "govuk-button--secondary",
+        href: "create-user-cancel"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

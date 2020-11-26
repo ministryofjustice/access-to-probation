@@ -2,7 +2,20 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  HMPPS Access to Probation
+  HMPPS Access to probation - Start page
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {{ mojHeader({
+    serviceLabel: {
+      html: "<strong>HMPPS</strong> Digital Services",
+      href: '#'
+    },
+    navigation: {label: 'Account navigation', items:[
+    ]}
+  }) }}
+
 {% endblock %}
 
 {% block beforeContent %}
@@ -10,14 +23,56 @@
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+  <h1 class="govuk-heading-xl">
+    <span class="govuk-caption-xl">
+      Prototypes
+    </span>
+    Access to probation
+  </h1>
 
-      <p class="govuk-body">
-        <a href="v1_0-hmpps-dps/login" class="govuk-link">HMPPS Digital Services v1.0 - As is journey</a>
-      </p>
+  <span class="govuk-tag">To be</span>
+  <h2 class="govuk-heading-l">External admin user</h2>
 
-    </div>
-  </div>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>First commit (26/11/2020)</li>
+  </ul>
+  <a href="v1_0-external-admin/index" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+    Version 1.0
+    <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" role="presentation" focusable="false">
+      <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"/>
+    </svg>
+  </a>
+
+  {{ govukDetails({
+    summaryText: "Known issues and points to consider",
+    html: '
+      <div>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Point 1</li>
+          <li>Point 2</li>
+          <li>Point 3</li>
+          <li>Point 4</li>
+          <li>Point 5</li>
+          <li>Point 6</li>
+          <li>Point 7</li>
+          <li>Point 8</li>
+        </ul>
+      </div>
+      '
+    }) }}
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+  <h2 class="govuk-heading-l">As is</h2>
+
+  <!-- HMPPS AUTH ADMIN VERSION 1.0 -->
+  <h3 class="govuk-heading-m">
+    <a href="v1_0-hmpps-dps/login">HMPPS Auth Admin &ndash; Version 1.0</a>
+  </h3>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>known issue 1</li>
+    <li>known issue 2</li>
+    <li>known issue 3</li>
+  </ul>
 
 {% endblock %}

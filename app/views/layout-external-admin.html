@@ -38,26 +38,22 @@
 {% endblock %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+  External Admin User
 {% endblock %}
 
 {% block header %}
   {% include "includes/cookie-banner.html" %}
   {{ mojHeader({
     serviceLabel: {
-      html: "<strong>HMPPS</strong> Digital Services",
-      href: '/select-service'
+      html: "<strong>HMPPS</strong> Access to probation",
+      href: '/v1_0-external-admin/select-task'
     },
     navigation: {label: 'Account navigation', items:[
       {
-        href: "#",
-        text: "John Doe",
-        attributes: {
-          onclick: "alert('The real name of the user... no link resides behind it either')"
-        }
+        text: "John Doe"
       },
       {
-        href: "/login",
+        href: "index",
         html: "<strong>Sign out</strong>"
       }
     ]}

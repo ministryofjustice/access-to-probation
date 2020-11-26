@@ -1,0 +1,56 @@
+
+{% extends "layout-external-admin.html" %}
+
+{% block pageTitle %}
+  External admin - Search for a user
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "select-task"
+    },
+    {
+      text: "Search for user account"
+    }
+  ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Search for user account
+      </h1>
+      <p>
+
+      <form action="search-user" method="get">
+
+        {{ govukInput({
+          label: {
+            text: "Name, username or email address",
+            classes: "govuk-label"
+          },
+          classes: "govuk-!-width-full",
+          id: "username-email-address",
+          name: "username-email-address"
+        }) }}
+
+        {{ govukButton({
+          text: "Search",
+          href: "search-results"
+        }) }}
+  
+      </form>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

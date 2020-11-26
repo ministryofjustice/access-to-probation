@@ -1,15 +1,15 @@
 
-{% extends "layout.html" %}
+{% extends "layout-external-admin.html" %}
 
 {% block pageTitle %}
-  HMPPS Digital Services - Sign in
+  External admin - Sign in
 {% endblock %}
 
 {% block header %}
   {% include "includes/cookie-banner.html" %}
   {{ mojHeader({
     serviceLabel: {
-      html: "<strong>HMPPS</strong> Digital Services",
+      html: "<strong>HMPPS</strong> Access to probation",
       href: '/index'
     },
     navigation: {label: 'Account navigation', items:[
@@ -25,11 +25,6 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {{ govukWarningText({
-        html: "This is a test service only - it does not contain any real details. 
-          Use the live <a href='https://sign-in.hmpps.service.justice.gov.uk/auth/'>HMPPS Digital Service</a> to view real details.",
-        iconFallbackText: "Warning"
-      }) }}
 
       <h1 class="govuk-heading-l">
         Sign in
@@ -40,7 +35,7 @@
 
         {{ govukInput({
           label: {
-            text: "Username",
+            text: "Username or email address",
             classes: "govuk-label"
           },
           classes: "govuk-input--width-20",
@@ -61,19 +56,15 @@
 
         {{ govukButton({
           text: "Sign in",
-          href: "select-service"
+          href: "select-task"
         }) }}
-        
-        <p class="govuk-body">
-          <a href="#" class="govuk-link">Sign in with a justice.gov.uk email</a>
-        </p>
 
         <h2 class="govuk-heading-m">
           Problems signing in
         </h1>
 
         <p class="govuk-body">
-          <a href="https://sign-in-dev.hmpps.service.justice.gov.uk/auth/reset-password" class="govuk-link">I have forgotten my password</a>
+          <a href="#" class="govuk-link">I have forgotten my password</a>
         </p>
 
         {{ govukDetails({

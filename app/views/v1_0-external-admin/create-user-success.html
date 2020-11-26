@@ -1,0 +1,32 @@
+
+{% extends "layout-external-admin.html" %}
+
+{% block pageTitle %}
+  External admin - New account created successfully
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation" style="background-color: #1d70b8;">
+        <h1 class="govuk-panel__title">
+          Account created successfully
+        </h1>
+      </div>
+
+      <p class="govuk-body">
+        The new user account has been created successully.
+      </p>
+      
+      <p class="govuk-body">
+        <a href="select-task" class="govuk-link">Continue</a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

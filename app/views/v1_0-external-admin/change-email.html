@@ -1,0 +1,47 @@
+
+{% extends "layout-external-admin.html" %}
+
+{% block pageTitle %}
+  External admin - Change email address
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="change-email-address" method="get">
+
+        {{ govukInput({
+          label: {
+            text: "Change email",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          value: "pierce.riggs@greentree.com",
+          classes: "govuk-!-width-full",
+          id: "change-email-address",
+          name: "change-email-address"
+        }) }}
+
+        {{ govukButton({
+          text: "Confirm",
+          classes: "govuk-!-margin-right-1",
+          href: "PRIGGS"
+        }) }}
+
+        {{ govukButton({
+          text: "Cancel",
+          classes: "govuk-button--secondary",
+          href: "PRIGGS"
+        }) }}
+  
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

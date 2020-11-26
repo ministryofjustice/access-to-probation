@@ -1,0 +1,131 @@
+
+{% extends "layout-external-admin.html" %}
+
+{% block pageTitle %}
+  External admin - Search for a user results
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "select-task"
+    },
+    {
+      text: "Search for user account",
+      href: "search-user"
+    },
+    {
+      text: "Search results"
+    }
+  ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Search for user account results
+      </h1>
+
+      <form action="search-user-results" method="get">
+        {{ govukInput({
+          label: {
+            text: "Name, username or email address",
+            classes: "govuk-label"
+          },
+          classes: "govuk-!-width-full",
+          id: "username-email-address",
+          name: "username-email-address",
+          value: "riggs"
+        }) }}
+
+        {{ govukButton({
+          text: "Search",
+          href: "search-results"
+        }) }}
+      </form>
+    </div>
+
+    <div class="govuk-grid-column-full">
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Name</th>
+            <th scope="col" class="govuk-table__header">Username</th>
+            <th scope="col" class="govuk-table__header">Email</th>
+            <th scope="col" class="govuk-table__header">Active</th>
+            <th scope="col" class="govuk-table__header">Verified</th>
+            <th scope="col" class="govuk-table__header"></th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Andrew Riggs</td>
+            <td class="govuk-table__cell">ARIGGS</td>
+            <td class="govuk-table__cell">andrew.riggs@greentree.com</td>
+            <td class="govuk-table__cell">Yes</td>
+            <td class="govuk-table__cell">Yes</td>
+            <td class="govuk-table__cell" style="text-align: right;"><a href='PRIGGS' class='govuk-link'>Edit</a></td>
+          </tr>
+        </tbody>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Ashley Riggs</td>
+            <td class="govuk-table__cell">A2RIGGS</td>
+            <td class="govuk-table__cell">ashley.riggs@greentree.com</td>
+            <td class="govuk-table__cell">Yes</td>
+            <td class="govuk-table__cell">No</td>
+            <td class="govuk-table__cell" style="text-align: right;"><a href='PRIGGS' class='govuk-link'>Edit</a></td>
+          </tr>
+        </tbody>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Brandon Riggs</td>
+            <td class="govuk-table__cell">BRIGGS</td>
+            <td class="govuk-table__cell">brandon.riggs@greentree.com</td>
+            <td class="govuk-table__cell">Yes</td>
+            <td class="govuk-table__cell">Yes</td>
+            <td class="govuk-table__cell" style="text-align: right;"><a href='PRIGGS' class='govuk-link'>Edit</a></td>
+          </tr>
+        </tbody>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Katherine Riggs</td>
+            <td class="govuk-table__cell">KRIGGS</td>
+            <td class="govuk-table__cell">katherine.riggs@greentree.com</td>
+            <td class="govuk-table__cell">Yes</td>
+            <td class="govuk-table__cell">No</td>
+            <td class="govuk-table__cell" style="text-align: right;"><a href='PRIGGS' class='govuk-link'>Edit</a></td>
+          </tr>
+        </tbody>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Miles Riggs</td>
+            <td class="govuk-table__cell">MRIGGS</td>
+            <td class="govuk-table__cell">miles.riggs@greentree.com</td>
+            <td class="govuk-table__cell">Yes</td>
+            <td class="govuk-table__cell">Yes</td>
+            <td class="govuk-table__cell" style="text-align: right;"><a href='PRIGGS' class='govuk-link'>Edit</a></td>
+          </tr>
+        </tbody>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Pierce Riggs</td>
+            <td class="govuk-table__cell">PRIGGS</td>
+            <td class="govuk-table__cell">pierce.riggs@greentree.com</td>
+            <td class="govuk-table__cell">Yes</td>
+            <td class="govuk-table__cell">Yes</td>
+            <td class="govuk-table__cell" style="text-align: right;"><a href='PRIGGS' class='govuk-link'>Edit</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+{% endblock %}

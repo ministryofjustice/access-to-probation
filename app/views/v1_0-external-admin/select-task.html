@@ -1,0 +1,38 @@
+
+{% extends "layout-external-admin.html" %}
+
+{% block pageTitle %}
+  External admin - Home
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+        Green Tree Training Limited
+      </h1>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+          <h2 class="govuk-heading-m"><a href="create-user">Create a new user account</a></h2>
+          <p class="govuk-body">
+            Create new user accounts.
+          </p>
+        </div>
+    
+        <div class="govuk-grid-column-one-half">
+          <h2 class="govuk-heading-m"><a href="search-user">Search, view, edit user account</a></h2>
+          <p class="govuk-body">
+            Here you can search for users, edit profile details, deactivate accounts, as well as assign and change roles.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
