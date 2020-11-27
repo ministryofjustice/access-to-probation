@@ -13,19 +13,6 @@
         Create a new user account
       </h1>
 
-      {% set subcontractOrgNameHtml %}
-        {{ govukInput({
-          id: "subcontract-org-name",
-          name: "subcontract-org-name",
-          type: "text",
-          spellcheck: true,
-          classes: "govuk-input--width-30",
-          label: {
-            text: "Organisation name"
-          }
-        }) }}
-      {% endset -%}
-
       {{ govukInput({
         label: {
           text: "First name"
@@ -74,10 +61,7 @@
         items: [
           {
             value: "yes",
-            text: "Yes",
-            conditional: {
-              html: subcontractOrgNameHtml
-            }
+            text: "Yes"
           },
           {
             value: "no",
