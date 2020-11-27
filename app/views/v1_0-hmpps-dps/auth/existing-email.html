@@ -1,5 +1,5 @@
 
-{% extends "layout.html" %}
+{% extends "layout-auth.html" %}
 
 {% block pageTitle %}
   HMPPS Digital Services - Change Email Request
@@ -9,6 +9,10 @@
 {% endblock %}
 
 {% block content %}
+  {{ mojBanner({
+    type: 'information',
+    html: 'Spacing issue between input field and submit button'
+  }) }}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -32,9 +36,6 @@
         text: "Continue",
         href: "new-email"
       }) }}
-
-<p><strong>THERE'S A HORRIBLE SPACING ISSUE HERE THAT NEEDS TO BE SORTED</strong></p>
-
 
     </div>
   </div>

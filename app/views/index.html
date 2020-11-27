@@ -34,7 +34,7 @@
   <h2 class="govuk-heading-l">External admin user</h2>
 
   <ul class="govuk-list govuk-list--bullet">
-    <li>First commit (26/11/2020)</li>
+    <li>First commit 26th November 2020</li>
   </ul>
   <a href="v1_0-external-admin/index" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
     Version 1.0
@@ -48,14 +48,13 @@
     html: '
       <div>
         <ul class="govuk-list govuk-list--bullet">
-          <li>Point 1</li>
-          <li>Point 2</li>
-          <li>Point 3</li>
-          <li>Point 4</li>
-          <li>Point 5</li>
-          <li>Point 6</li>
-          <li>Point 7</li>
-          <li>Point 8</li>
+          <li>Organisation name is fixed as <strong>Green Tree Training Limited</strong></li>
+          <li>Account creation data is fixed to <strong>Pierce Riggs</strong></li>
+          <li>Search criteria has been fixed as <strong>riggs</strong></li>
+          <li>Data entered isn&#146;t dynamic</li>
+          <li>Validation hasn&#146;t been applied</li>
+          <li>2x Roles have been assumed</li>
+          <li>No emails or comms outside of the service have been considered within this journey</li>
         </ul>
       </div>
       '
@@ -70,9 +69,25 @@
     <a href="v1_0-hmpps-dps/login">HMPPS Auth Admin &ndash; Version 1.0</a>
   </h3>
   <ul class="govuk-list govuk-list--bullet">
-    <li>known issue 1</li>
-    <li>known issue 2</li>
-    <li>known issue 3</li>
+    <li>First commit 26th November 2020</li>
   </ul>
+  
+  {{ govukDetails({
+    summaryText: "Known issues and points to consider",
+    html: '
+      <div>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Type ahead not implemented</li>
+          <li>Task action panels not styled correctly</li>
+          <li>Add and remove roles not functioning</li>
+          <li>Add and remove groups not functioning</li>
+          <li>Auto-complete / type ahead not functioning when adding additional groups</li>
+          <li>Top right blue username drop down hasn&#146;t been implemented</li>
+          <li>No emails or comms outside of the service have been considered within this journey</li>
+        </ul>
+      </div>
+      '
+    }) }}
+    <!-- ============================ -->
 
 {% endblock %}

@@ -31,6 +31,7 @@
 
 {% from "moj/components/header/macro.njk"             import mojHeader %}
 {% from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation %}
+{%- from "moj/components/banner/macro.njk"            import mojBanner -%}
 
 {% block head %}
   {% include "includes/head.html" %}
@@ -46,7 +47,7 @@
   {{ mojHeader({
     serviceLabel: {
       html: "<strong>HMPPS</strong> Digital Services",
-      href: '/select-service'
+      href: 'select-service'
     },
     navigation: {label: 'Account navigation', items:[
       {
@@ -57,7 +58,7 @@
         }
       },
       {
-        href: "/login",
+        href: "/v1_0-hmpps-dps/login",
         html: "<strong>Sign out</strong>"
       }
     ]}

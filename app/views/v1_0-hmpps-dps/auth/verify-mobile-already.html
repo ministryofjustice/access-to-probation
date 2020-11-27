@@ -1,8 +1,8 @@
 
-{% extends "layout.html" %}
+{% extends "layout-auth.html" %}
 
 {% block pageTitle %}
-  HMPPS Digital Services - Resend Verification Code
+  HMPPS Digital Services - Verify Mobile Confirmation
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,15 +13,15 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
-        Resend security code
+        Mobile already verified
       </h1>
       <p class="govuk-body">
-        Emails sometimes take a few minutes to arrive. If you do not receive the email, you can resend it.
+        Your mobile number has already been verified
       </p>
       
       {{ govukButton({
-        text: "Resend security code",
-        href: "verify-email-sent"
+        text: "Ok, continue",
+        href: "account-details"
       }) }}
     
     </div>

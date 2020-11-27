@@ -39,19 +39,23 @@
 {% endblock %}
 
 {% block pageTitle %}
-  External Admin User
+  GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
   {% include "includes/cookie-banner.html" %}
   {{ mojHeader({
     serviceLabel: {
-      html: "<strong>HMPPS</strong> Access to probation",
-      href: '/v1_0-external-admin/select-task'
+      html: "<strong>HMPPS</strong> Digital Services",
+      href: '/v1_0-hmpps-dps/select-service'
     },
     navigation: {label: 'Account navigation', items:[
       {
-        text: "John Doe"
+        href: "#",
+        text: "John Doe",
+        attributes: {
+          onclick: "alert('The real name of the user... no link resides behind it either')"
+        }
       },
       {
         href: "/v1_0-hmpps-dps/login",

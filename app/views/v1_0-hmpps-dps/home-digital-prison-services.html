@@ -10,32 +10,32 @@
 
 {% block content %}
 
+  {{ mojBanner({
+    type: 'information',
+    html: 'Known styling issues and missing "task" icons'
+  }) }}
+
   <div class="govuk-grid-row">
-    <div class="govuk-main-wrapper">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-m">
+        Tasks
+      </h1>
 
-<p>ISSUES THAT NEED TIDYING UP HERE</p>
-
-      <div>
-        <h1 class="govuk-heading-m">
-          Tasks
-        </h1>
-        <div class="action-links">
-          <div class="action-links__link">
-            <a href="#" class="action-link">
-              <img src="img/global-search.png" alt="Global search icon">Global search
-            </a>
-          </div>
-          <div class="action-links__link">
-            <a href="#" class="action-link">
-              <img src="/img/ICON_Licences.png" alt="HDC and Licences icon">HDC and Licences
-            </a>
-          </div>
-          <div class="action-links__link">
-            <a href="manage-user-accounts/index.html" class="action-link">
-              <img src="/img/ICON_AdminUtilities.png" alt="Manage user accounts icon">Manage user accounts
-            </a>
-          </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+          <h2 class="govuk-heading-m"><a href="#">Global search</a></h2>
         </div>
+    
+        <div class="govuk-grid-column-one-third">
+          <h2 class="govuk-heading-m"><a href="#">HDC and Licences</a></h2>
+          <p class="govuk-body"></p>
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+          <h2 class="govuk-heading-m"><a href="manage-user-accounts/index.html">Manage user accounts</a></h2>
+          <p class="govuk-body"></p>
+        </div>
+
       </div>
     </div>
   </div>
