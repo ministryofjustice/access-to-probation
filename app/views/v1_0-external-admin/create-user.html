@@ -5,22 +5,6 @@
   External admin - Create new user
 {% endblock %}
 
-{% block beforeContent %}
-
-  {{ govukBreadcrumbs({
-  items: [
-    {
-      text: "Home",
-      href: "select-task"
-    },
-    {
-      text: "Create a new user account"
-    }
-  ]
-  }) }}
-
-{% endblock %}
-
 {% block content %}
 
   <div class="govuk-grid-row">
@@ -28,6 +12,19 @@
       <h1 class="govuk-heading-l">
         Create a new user account
       </h1>
+
+      {% set subcontractOrgNameHtml %}
+        {{ govukInput({
+          id: "subcontract-org-name",
+          name: "subcontract-org-name",
+          type: "text",
+          spellcheck: true,
+          classes: "govuk-input--width-30",
+          label: {
+            text: "Organisation name"
+          }
+        }) }}
+      {% endset -%}
 
       {{ govukInput({
         label: {
@@ -67,12 +64,40 @@
 
       {{ govukRadios({
         classes: "govuk-radios--small",
+        idPrefix: "subcontract",
+        name: "subcontract",
+        fieldset: {
+          legend: {
+            text: "Is this new user account a sub-contractor?",
+            isPageHeading: no          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes",
+            conditional: {
+              html: subcontractOrgNameHtml
+            }
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukCheckboxes({
+        classes: "govuk-checkboxes--small",
         idPrefix: "role",
         name: "role",
         fieldset: {
           legend: {
-            text: "Role",
-            isPageHeading: false          }
+            text: "Choose roles",
+            isPageHeading: false
+          }
+        },
+        hint: {
+          text: "Select all that apply"
         },
         items: [
           {

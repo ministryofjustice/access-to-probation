@@ -5,6 +5,30 @@
   External admin - Profile
 {% endblock %}
 
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "select-task"
+    },
+    {
+      text: "Search for user account",
+      href: "search-user"
+    },
+    {
+      text: "Search results",
+      href: "search-results"
+    },
+    {
+      text: "Pierce Riggs"
+    }
+  ]
+  }) }}
+
+{% endblock %}
+
 {% block content %}
 
   <div class="govuk-grid-row">
@@ -17,7 +41,7 @@
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row user-enabled-status">
             <td scope="row" class="govuk-table__cell" style="border-bottom: 0;"><strong class="govuk-tag govuk-tag--red" data-qa="enabled">Deactivated account</strong></td>
-            <td class="govuk-table__cell govuk-table__cell--numeric govuk-!-width-one-quarter" style="text-align: right; border-bottom: 0;"><a href="activate-account.html" class="govuk-link" data-qa="enable-button">Activate account</a></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric govuk-!-width-one-quarter" style="text-align: right; border-bottom: 0;"><a href="PRIGGS.html" class="govuk-link" data-qa="enable-button">Activate account</a></td>
           </tr>
         </tbody>
       </table>
@@ -26,9 +50,9 @@
         <caption class="govuk-table__caption">Account details</caption>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <td scope="row" class="govuk-table__cell govuk-!-width-one-quarter">Username</td>
+            <td scope="row" class="govuk-table__cell">Username</td>
             <td class="govuk-table__cell">PRIGGS</td>
-            <td class="govuk-table__cell" style="text-align: right;"></td>
+            <td class="govuk-table__cell" style="text-align: right;"></a></td>
           </tr>
         </tbody>
         <tbody class="govuk-table__body">
@@ -40,41 +64,9 @@
         </tbody>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <td scope="row" class="govuk-table__cell">Telephone number</td>
-            <td class="govuk-table__cell">07770 123456</td>
-            <td class="govuk-table__cell" style="text-align: right;"></td>
-          </tr>
-        </tbody>
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <td scope="row" class="govuk-table__cell">Organisation</td>
-            <td class="govuk-table__cell">Green Tree Training Limited</td>
-            <td class="govuk-table__cell" style="text-align: right;"></td>
-          </tr>
-        </tbody>
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <td scope="row" class="govuk-table__cell">Sub-contractor</td>
-            <td class="govuk-table__cell">Yes</td>
-            <td class="govuk-table__cell" style="text-align: right;"></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <table class="govuk-table">
-        <caption class="govuk-table__caption">Account status</caption>
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
             <td scope="row" class="govuk-table__cell">Verified</td>
             <td class="govuk-table__cell">Yes</td>
-            <td class="govuk-table__cell" style="text-align: right;"></td>
-          </tr>
-        </tbody>
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <td scope="row" class="govuk-table__cell">Locked</td>
-            <td class="govuk-table__cell">Yes</td>
-            <td class="govuk-table__cell" style="text-align: right;"><a href='unlock-account' class='govuk-link'>Unlock account</a></td>
+            <td class="govuk-table__cell" style="text-align: right;"></a></td>
           </tr>
         </tbody>
         <tbody class="govuk-table__body">
@@ -87,7 +79,7 @@
       </table>
 
       <table class="govuk-table">
-        <caption class="govuk-table__caption">Roles</caption>
+        <caption class="govuk-table__caption">Role</caption>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <td scope="row" class="govuk-table__cell">Normal</td>
@@ -96,10 +88,6 @@
         </tbody>
       </table>
     
-      <p class="govuk-body">
-        <a href="select-task" class="govuk-link">Back to task selection</a>
-      </p>
-
     </div>
   </div>
 

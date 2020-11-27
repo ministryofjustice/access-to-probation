@@ -2,7 +2,7 @@
 {% extends "layout-access-to-probation.html" %}
 
 {% block pageTitle %}
-  External admin - Change role
+  External admin - Unlock account
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,24 +12,29 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">
-        Change the account roles
-      </h1>
 
-      {{ govukCheckboxes({
-        idPrefix: "role",
-        name: "role",
+      {{ govukRadios({
+        classes: "govuk-radios",
+        idPrefix: "unlock-account",
+        name: "unlock-account",
+        fieldset: {
+          legend: {
+            text: "Unlock account?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
         hint: {
-          text: "Select all that apply"
+          text: "Unlocking the account will automatically require the user to reset their password."
         },
         items: [
           {
-            value: "normal",
-            text: "Normal"
+            value: "yes",
+            text: "Yes"
           },
           {
-            value: "read-only",
-            text: "Read only"
+            value: "no",
+            text: "No"
           }
         ]
       }) }}

@@ -2,7 +2,7 @@
 {% extends "layout-access-to-probation.html" %}
 
 {% block pageTitle %}
-  External admin - Change role
+  External admin - Activate account
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,24 +12,26 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">
-        Change the account roles
-      </h1>
 
-      {{ govukCheckboxes({
-        idPrefix: "role",
-        name: "role",
-        hint: {
-          text: "Select all that apply"
+      {{ govukRadios({
+        classes: "govuk-radios",
+        idPrefix: "deactivate-account",
+        name: "deactivate-account",
+        fieldset: {
+          legend: {
+            text: "Activate account?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
         },
         items: [
           {
-            value: "normal",
-            text: "Normal"
+            value: "yes",
+            text: "Yes"
           },
           {
-            value: "read-only",
-            text: "Read only"
+            value: "no",
+            text: "No"
           }
         ]
       }) }}
