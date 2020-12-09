@@ -49,6 +49,71 @@
         name: "telephone-number"
       }) }}
 
+      {{ govukInput({
+        label: {
+          text: "Prime Organisation"
+        },
+        classes: "govuk-input--width-20",
+        id: "prime-organisation",
+        name: "prime-organisation"
+      }) }}
+
+      {{ govukSelect({
+        id: "prime-organisation",
+        name: "prime-organisation",
+        style: "display: none",
+        label: {
+          text: "Select Prime Organisation"
+        },
+        items: [
+          {
+            value: "abclimited",
+            text: "abc Limited"
+          },
+          {
+            value: "bbbOrganisation",
+            text: "bbb Oraganisation"
+          },
+          {
+            value: "cccOrganisation",
+            text: "ccc Organisation"
+          },
+          {
+            value: "dddOrganisation",
+            text: "ddd Organisation"
+          }
+        ]
+      }) }}
+
+      {% set subcontractorHtml %}
+      {{ govukSelect({
+        id: "subcontractor-organisation",
+        name: "subcontractor-organisation",
+        style: "display: none",
+        label: {
+          text: "Select subcontractor Organisation"
+        },
+        items: [
+          {
+            value: "abclimited",
+            text: "abc Limited"
+          },
+          {
+            value: "bbbOrganisation",
+            text: "bbb Oraganisation"
+          },
+          {
+            value: "cccOrganisation",
+            text: "ccc Organisation"
+          },
+          {
+            value: "dddOrganisation",
+            text: "ddd Organisation"
+          }
+        ]
+      }) }}
+      {% endset -%}
+
       {{ govukRadios({
         classes: "govuk-radios--small",
         idPrefix: "subcontract",
@@ -61,7 +126,10 @@
         items: [
           {
             value: "yes",
-            text: "Yes"
+            text: "Yes",
+            conditional: {
+              html: subcontractorHtml
+            }
           },
           {
             value: "no",
