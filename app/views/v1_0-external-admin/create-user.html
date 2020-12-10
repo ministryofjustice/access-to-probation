@@ -1,8 +1,23 @@
-
 {% extends "layout-access-to-probation.html" %}
 
 {% block pageTitle %}
   External admin - Create new user
+{% endblock %}
+
+{% block beforeContent %}	
+
+  {{ govukBreadcrumbs({	
+  items: [	
+    {	
+      text: "Home",	
+      href: "select-task"	
+    },	
+    {	
+      text: "Create a new user account"	
+    }	
+  ]	
+  }) }}	
+
 {% endblock %}
 
 {% block content %}
@@ -40,14 +55,60 @@
         name: "email-address"
       }) }}
 
-      {{ govukInput({
-        label: {
-          text: "Telephone number"
+      {{ govukSelect({label: {
+        text: "Select an Organisation"
+      },
+        idPrefix: 'organisation-name',
+        name: 'organisation-name',
+        id: 'organisation-name',
+        classes: "govuk-!-width-three-quarters",
+        items: [
+        {
+          value: "red-town-ltd",
+          text: "Red Town Ltd"
         },
-        classes: "govuk-input--width-20",
-        id: "telephone-number",
-        name: "telephone-number"
+        {
+          value: "blue-sky-ltd",
+          text: "Blue Sky Ltd"
+        },
+        {
+          value: "central-housing-ltd",
+          text: "Central Housing"
+        },
+        {
+          value: "city-activities-ltd",
+          text: "City Activities Limited"
+        }]
       }) }}
+
+      {% set subcontractorHtml %}
+      {{ govukSelect({
+        id: "subcontractor-organisation",
+        name: "subcontractor-organisation",
+        classes: "govuk-!-width-three-quarters",
+        label: {
+          text: "Select subcontractor Organisation"
+        },
+        items: [
+          {
+            value: "tall-trees-services",
+            text: "Tall Trees Services"
+          },
+          {
+            value: "just-windows-limited",
+            text: "Just Windows Limited"
+          },
+          {
+            value: "city-training-services",
+            text: "City Training Services"
+          },
+          {
+            value: "green-education",
+            text: "Green Education"
+          }
+        ]
+      }) }}
+      {% endset -%}
 
       {{ govukRadios({
         classes: "govuk-radios--small",
@@ -61,7 +122,10 @@
         items: [
           {
             value: "yes",
-            text: "Yes"
+            text: "Yes",
+            conditional: {
+              html: subcontractorHtml
+            }
           },
           {
             value: "no",
@@ -86,11 +150,17 @@
         items: [
           {
             value: "normal",
-            text: "Normal"
+            text: "Normal",
+            hint: {
+              text: "A description of the role"
+            }
           },
           {
             value: "read-only",
-            text: "Read only"
+            text: "Read only",
+            hint: {
+              text: "A description of the role"
+            }
           }
         ]
       }) }}
@@ -98,7 +168,7 @@
       {{ govukButton({
         text: "Create account",
         classes: "govuk-!-margin-right-1",
-        href: "create-user-success"
+        href: "PRIGGS"
       }) }}
       
       {{ govukButton({
@@ -111,3 +181,4 @@
   </div>
 
 {% endblock %}
+

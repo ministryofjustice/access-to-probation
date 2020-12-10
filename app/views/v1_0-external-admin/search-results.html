@@ -7,9 +7,20 @@
 
 {% block beforeContent %}
 
-  {{ govukBackLink({
-    text: "Back",
-    href: "select-task"
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "select-task"
+    },	
+    {	
+      text: "Search for user account",	
+      href: "search-user"	
+    },	
+    {	
+      text: "Search results"	
+    }
+  ]
   }) }}
 
 {% endblock %}

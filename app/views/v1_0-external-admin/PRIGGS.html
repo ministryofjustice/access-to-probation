@@ -1,8 +1,31 @@
-
 {% extends "layout-access-to-probation.html" %}
 
 {% block pageTitle %}
   External admin - Profile
+{% endblock %}
+
+{% block beforeContent %}	
+
+  {{ govukBreadcrumbs({	
+  items: [	
+    {	
+      text: "Home",	
+      href: "select-task"	
+    },	
+    {	
+      text: "Search for user account",	
+      href: "search-user"	
+    },	
+    {	
+      text: "Search results",	
+      href: "search-results"	
+    },	
+    {	
+      text: "Pierce Riggs"	
+    }	
+  ]	
+  }) }}	
+
 {% endblock %}
 
 {% block content %}
@@ -26,7 +49,7 @@
         <caption class="govuk-table__caption">Account details</caption>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <td scope="row" class="govuk-table__cell govuk-!-width-one-quarter">Username</td>
+            <td scope="row" class="govuk-table__cell govuk-!-width-one-third">Username</td>
             <td class="govuk-table__cell">PRIGGS</td>
             <td class="govuk-table__cell" style="text-align: right;"></td>
           </tr>
@@ -40,8 +63,8 @@
         </tbody>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <td scope="row" class="govuk-table__cell">Telephone number</td>
-            <td class="govuk-table__cell">07770 123456</td>
+            <td scope="row" class="govuk-table__cell">Organisation Name</td>
+            <td class="govuk-table__cell">Blue Sky Ltd</td>
             <td class="govuk-table__cell" style="text-align: right;"></td>
           </tr>
         </tbody>
@@ -49,6 +72,13 @@
           <tr class="govuk-table__row">
             <td scope="row" class="govuk-table__cell">Sub-contractor</td>
             <td class="govuk-table__cell">Yes</td>
+            <td class="govuk-table__cell" style="text-align: right;"></td>
+          </tr>
+        </tbody>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell govuk-!-width-two-quarter">Sub-contractor Name</td>
+            <td class="govuk-table__cell">Tall Trees Services</td>
             <td class="govuk-table__cell" style="text-align: right;"></td>
           </tr>
         </tbody>
@@ -67,7 +97,6 @@
           <tr class="govuk-table__row">
             <td scope="row" class="govuk-table__cell">Locked</td>
             <td class="govuk-table__cell">Yes</td>
-            <td class="govuk-table__cell" style="text-align: right;"><a href='unlock-account' class='govuk-link'>Unlock account</a></td>
           </tr>
         </tbody>
         <tbody class="govuk-table__body">
