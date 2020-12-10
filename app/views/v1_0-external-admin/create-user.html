@@ -1,8 +1,23 @@
-
 {% extends "layout-access-to-probation.html" %}
 
 {% block pageTitle %}
   External admin - Create new user
+{% endblock %}
+
+{% block beforeContent %}	
+
+  {{ govukBreadcrumbs({	
+  items: [	
+    {	
+      text: "Home",	
+      href: "select-task"	
+    },	
+    {	
+      text: "Create a new user account"	
+    }	
+  ]	
+  }) }}	
+
 {% endblock %}
 
 {% block content %}
@@ -40,75 +55,56 @@
         name: "email-address"
       }) }}
 
-      {{ govukInput({
-        label: {
-          text: "Telephone number"
-        },
-        classes: "govuk-input--width-20",
-        id: "telephone-number",
-        name: "telephone-number"
-      }) }}
-
-      {{ govukInput({
-        label: {
-          text: "Prime Organisation"
-        },
-        classes: "govuk-input--width-20",
-        id: "prime-organisation",
-        name: "prime-organisation"
-      }) }}
-
-      {{ govukSelect({
-        id: "prime-organisation",
-        name: "prime-organisation",
-        style: "display: none",
-        label: {
-          text: "Select Prime Organisation"
-        },
+      {{ govukSelect({label: {
+        text: "Select an Organisation"
+      },
+        idPrefix: 'organisation-name',
+        name: 'organisation-name',
+        id: 'organisation-name',
+        classes: "govuk-!-width-three-quarters",
         items: [
-          {
-            value: "abclimited",
-            text: "abc Limited"
-          },
-          {
-            value: "bbbOrganisation",
-            text: "bbb Oraganisation"
-          },
-          {
-            value: "cccOrganisation",
-            text: "ccc Organisation"
-          },
-          {
-            value: "dddOrganisation",
-            text: "ddd Organisation"
-          }
-        ]
+        {
+          value: "red-town-ltd",
+          text: "Red Town Ltd"
+        },
+        {
+          value: "blue-sky-ltd",
+          text: "Blue Sky Ltd"
+        },
+        {
+          value: "central-housing-ltd",
+          text: "Central Housing"
+        },
+        {
+          value: "city-activities-ltd",
+          text: "City Activities Limited"
+        }]
       }) }}
 
       {% set subcontractorHtml %}
       {{ govukSelect({
         id: "subcontractor-organisation",
         name: "subcontractor-organisation",
-        style: "display: none",
+        classes: "govuk-!-width-three-quarters",
         label: {
           text: "Select subcontractor Organisation"
         },
         items: [
           {
-            value: "abclimited",
-            text: "abc Limited"
+            value: "tall-trees-services",
+            text: "Tall Trees Services"
           },
           {
-            value: "bbbOrganisation",
-            text: "bbb Oraganisation"
+            value: "just-windows-limited",
+            text: "Just Windows Limited"
           },
           {
-            value: "cccOrganisation",
-            text: "ccc Organisation"
+            value: "city-training-services",
+            text: "City Training Services"
           },
           {
-            value: "dddOrganisation",
-            text: "ddd Organisation"
+            value: "green-education",
+            text: "Green Education"
           }
         ]
       }) }}
@@ -154,11 +150,17 @@
         items: [
           {
             value: "normal",
-            text: "Normal"
+            text: "Normal",
+            hint: {
+              text: "A description of the role"
+            }
           },
           {
             value: "read-only",
-            text: "Read only"
+            text: "Read only",
+            hint: {
+              text: "A description of the role"
+            }
           }
         ]
       }) }}
@@ -166,7 +168,7 @@
       {{ govukButton({
         text: "Create account",
         classes: "govuk-!-margin-right-1",
-        href: "create-user-success"
+        href: "PRIGGS"
       }) }}
       
       {{ govukButton({
@@ -179,3 +181,4 @@
   </div>
 
 {% endblock %}
+
