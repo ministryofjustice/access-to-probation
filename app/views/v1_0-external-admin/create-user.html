@@ -56,13 +56,17 @@
       }) }}
 
       {{ govukSelect({label: {
-        text: "Select an Organisation"
+        text: "Select a Group"
       },
-        idPrefix: 'organisation-name',
-        name: 'organisation-name',
-        id: 'organisation-name',
+        idPrefix: 'group-name',
+        name: 'group-name',
+        id: 'group-name',
         classes: "govuk-!-width-three-quarters",
         items: [
+        {
+          value: "green-tree-training-limited",
+          text: "Green Tree Training Limited"
+        },
         {
           value: "red-town-ltd",
           text: "Red Town Ltd"
@@ -79,59 +83,6 @@
           value: "city-activities-ltd",
           text: "City Activities Limited"
         }]
-      }) }}
-
-      {% set subcontractorHtml %}
-      {{ govukSelect({
-        id: "subcontractor-organisation",
-        name: "subcontractor-organisation",
-        classes: "govuk-!-width-three-quarters",
-        label: {
-          text: "Select subcontractor Organisation"
-        },
-        items: [
-          {
-            value: "tall-trees-services",
-            text: "Tall Trees Services"
-          },
-          {
-            value: "just-windows-limited",
-            text: "Just Windows Limited"
-          },
-          {
-            value: "city-training-services",
-            text: "City Training Services"
-          },
-          {
-            value: "green-education",
-            text: "Green Education"
-          }
-        ]
-      }) }}
-      {% endset -%}
-
-      {{ govukRadios({
-        classes: "govuk-radios--small",
-        idPrefix: "subcontract",
-        name: "subcontract",
-        fieldset: {
-          legend: {
-            text: "Is this new user account a sub-contractor?",
-            isPageHeading: no          }
-        },
-        items: [
-          {
-            value: "yes",
-            text: "Yes",
-            conditional: {
-              html: subcontractorHtml
-            }
-          },
-          {
-            value: "no",
-            text: "No"
-          }
-        ]
       }) }}
 
       {{ govukCheckboxes({
