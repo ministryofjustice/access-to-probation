@@ -63,17 +63,6 @@
         </tbody>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <td scope="row" class="govuk-table__cell">Organisation Name</td>
-            <td class="govuk-table__cell">Green Tree Training Limited</td>
-            <td class="govuk-table__cell" style="text-align: right;"></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <table class="govuk-table">
-        <caption class="govuk-table__caption">Account status</caption>
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
             <td scope="row" class="govuk-table__cell">Verified</td>
             <td class="govuk-table__cell">Yes</td>
             <td class="govuk-table__cell" style="text-align: right;"></td>
@@ -99,10 +88,30 @@
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <td scope="row" class="govuk-table__cell">Normal</td>
-            <td class="govuk-table__cell" style="text-align: right;"><a href='change-role' class='govuk-link'>Change role</a></td>
+            <td class="govuk-table__cell" style="text-align: right;"><a href='change-role' class='govuk-link'>Remove Role</a></td>
           </tr>
         </tbody>
       </table>
+      {{ govukButton({
+        text: "Add another role",
+        classes: "govuk-!-margin-right-1",
+        href: "PRIGGS"
+      }) }}
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption">Groups</caption>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">Green Tree Training Limited</td>
+            <td class="govuk-table__cell" style="text-align: right;"><a href='change-role' class='govuk-link'>Remove from group</a></td>
+          </tr>
+        </tbody>
+      </table>
+      {{ govukButton({
+        text: "Add another group",
+        classes: "govuk-!-margin-right-1",
+        href: "PRIGGS"
+      }) }}
     
       <p class="govuk-body">
         <a href="select-task" class="govuk-link">Back to task selection</a>

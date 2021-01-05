@@ -85,37 +85,6 @@
         }]
       }) }}
 
-      {{ govukCheckboxes({
-        classes: "govuk-checkboxes--small",
-        idPrefix: "role",
-        name: "role",
-        fieldset: {
-          legend: {
-            text: "Choose roles",
-            isPageHeading: false
-          }
-        },
-        hint: {
-          text: "Select all that apply"
-        },
-        items: [
-          {
-            value: "normal",
-            text: "Normal",
-            hint: {
-              text: "A description of the role"
-            }
-          },
-          {
-            value: "read-only",
-            text: "Read only",
-            hint: {
-              text: "A description of the role"
-            }
-          }
-        ]
-      }) }}
-
       {{ govukButton({
         text: "Create account",
         classes: "govuk-!-margin-right-1",
