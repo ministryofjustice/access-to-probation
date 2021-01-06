@@ -27,6 +27,15 @@
       <h1 class="govuk-heading-l">
         Create a new user account
       </h1>
+            
+      {{ govukInput({
+        label: {
+          text: "Email address"
+        },
+        classes: "govuk-!-width-three-quarters",
+        id: "email-address",
+        name: "email-address"
+      }) }}
 
       {{ govukInput({
         label: {
@@ -44,15 +53,6 @@
         classes: "govuk-!-width-three-quarters",
         id: "last-name",
         name: "last-name"
-      }) }}
-      
-      {{ govukInput({
-        label: {
-          text: "Email address"
-        },
-        classes: "govuk-!-width-three-quarters",
-        id: "email-address",
-        name: "email-address"
       }) }}
 
       {{ govukSelect({label: {
@@ -83,37 +83,6 @@
           value: "city-activities-ltd",
           text: "City Activities Limited"
         }]
-      }) }}
-
-      {{ govukCheckboxes({
-        classes: "govuk-checkboxes--small",
-        idPrefix: "role",
-        name: "role",
-        fieldset: {
-          legend: {
-            text: "Choose roles",
-            isPageHeading: false
-          }
-        },
-        hint: {
-          text: "Select all that apply"
-        },
-        items: [
-          {
-            value: "normal",
-            text: "Normal",
-            hint: {
-              text: "A description of the role"
-            }
-          },
-          {
-            value: "read-only",
-            text: "Read only",
-            hint: {
-              text: "A description of the role"
-            }
-          }
-        ]
       }) }}
 
       {{ govukButton({

@@ -26,7 +26,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
-        Search for user account
+        Search for an external user
       </h1>
       <p>
 
@@ -41,6 +41,63 @@
           id: "username-email-address",
           name: "username-email-address"
         }) }}
+
+
+      {{ govukSelect({label: {
+        text: "Select a Group"
+      },
+        idPrefix: 'group-name',
+        name: 'group-name',
+        id: 'group-name',
+        classes: "govuk-!-width-full",
+        items: [
+        {
+          value: "",
+          text: ""
+        },
+        {
+          value: "green-tree-training-limited",
+          text: "Green Tree Training Limited"
+        },
+        {
+          value: "red-town-ltd",
+          text: "Red Town Ltd"
+        },
+        {
+          value: "blue-sky-ltd",
+          text: "Blue Sky Ltd"
+        },
+        {
+          value: "central-housing-ltd",
+          text: "Central Housing"
+        },
+        {
+          value: "city-activities-ltd",
+          text: "City Activities Limited"
+        }]
+      }) }}
+
+      {{ govukSelect({label: {
+        text: "Select a Role"
+      },
+        idPrefix: 'role-name',
+        name: 'role-name',
+        id: 'role-name',
+        classes: "govuk-!-width-full",
+        items: [
+        {
+          value: "",
+          text: ""
+        },
+        {
+          value: "normal-role",
+          text: "Normal Role"
+        },
+        {
+          value: "extra-role",
+          text: "Extra Role"
+        }]
+      }) }}
 
         {{ govukButton({
           text: "Search",
