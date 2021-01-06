@@ -1,0 +1,57 @@
+
+{% extends "layout-access-to-probation.html" %}
+
+{% block pageTitle %}
+  External admin - Search for a user results
+{% endblock %}
+
+{% block beforeContent %}
+
+
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Select Roles
+      </h1>
+
+      {{ govukCheckboxes({
+        classes: "govuk-checkboxes--large",
+        idPrefix: "role",
+        name: "role",
+        items: [
+          {
+            value: "read-only",
+            text: "Read only"
+          },
+          {
+            value: "another-role",
+            text: "Another Role"
+          }
+        ]
+      }) }}
+    </div>
+
+    <div class="govuk-grid-column-full">
+
+
+      {{ govukButton({
+        text: "Confirm",
+        classes: "govuk-!-margin-right-1",
+        href: "PRIGGS-extra-role"
+      }) }}
+      
+      {{ govukButton({
+        text: "Cancel",
+        classes: "govuk-button--secondary",
+        href: "PRIGGS"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
